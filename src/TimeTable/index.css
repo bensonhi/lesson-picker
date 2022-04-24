@@ -1,0 +1,16 @@
+.timeTable{
+    text-align:center;
+    width:50%;
+}
+
+.submitButton{
+    margin: 5px auto;
+    width: 35%;
+    height: 70px;
+    font-weight: 600;
+    color: white;
+    font-size: large;
+    background-color: #F19681;
+    border-radius: 25px;
+    border: 2px solid #F19681;
+}
