@@ -18,6 +18,11 @@ class TimeTable extends React.Component {
     function getRow(i){
         let result=[<th>{lessonNum[i]}</th>]
         for(let j=0;j<7;j++){
+            if(before[i+14*j]==0)
+            result.push(<td><button onClick={()=>{changeRequire(i+14*j)}}></button></td>)
+            else if(before[i+14*j]==1)
+            result.push(<td><button onClick={()=>{changeRequire(i+14*j)}}>Not Available</button></td>)
+            else
             result.push(<td><button onClick={()=>{changeRequire(i+14*j)}}>{before[i+14*j]}</button></td>)
         }
         return result
