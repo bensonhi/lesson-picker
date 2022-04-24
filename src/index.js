@@ -48,6 +48,7 @@ class SubmitForm extends React.Component {
       require[item['課'][i]]=item['課程名稱'][0].text
     }
     chosen=[...chosen,item]
+    console.log(chosen)
     this.setState({require:require})
     this.setState({before:before})
     this.setState({chosen:chosen})
@@ -57,8 +58,9 @@ class SubmitForm extends React.Component {
     let chosen = this.state.chosen
     let require =  this.state.require
     for(let i=0;i<chosen.length;i++){
-      if(chosen[i]["課號\n"]==item["課號\n"]){
-        chosen.pop(i)
+      if(chosen[i]["課號"]==item["課號"]){
+        chosen.splice(i,1)
+        break
       }
     }
     let before =  this.state.before
@@ -75,7 +77,7 @@ class SubmitForm extends React.Component {
     let before =  this.state.before
     if(before[num]==0)
     before[num]=1
-    else if(before[num])
+    else if(before[num]==1)
     before[num]=0
     this.setState({before:before});
   }

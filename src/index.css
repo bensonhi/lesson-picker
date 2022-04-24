@@ -39,6 +39,7 @@ button:hover{
 
 
 table, th, td {
+  text-align: center;
   border: 1px solid;
   border-color: black;
 }

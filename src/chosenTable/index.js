@@ -10,7 +10,7 @@ class LessonTable extends React.Component {
     const unchoose =this.props.unchoose
     const choose =this.props.choose;
     const chosen =this.props.chosen
-    let shownColumn=[0,1,3,5,6,7,8,16,21]
+    let shownColumn=[0,1,2,5,6,7,8,16,21]
     function fieldContent(spans){
         return spans.map((item,index)=>{
            
