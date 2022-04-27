@@ -67,7 +67,7 @@ button{
 .flex2{
   margin-top: 10px;
   display: flex;
-  margin-left: 15px;
+  flex-wrap: wrap;
 }
 
 svg{

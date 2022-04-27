@@ -13,12 +13,13 @@ class SubmitForm extends React.Component {
       data:[],
       chosen:[],
       before:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-
+      start:0
     }
     this.submitRequire = this.submitRequire.bind(this);
     this.choose = this.choose.bind(this);
     this.unchoose = this.unchoose.bind(this);
     this.changeRequire = this.changeRequire.bind(this);
+    this.changeAll = this.changeAll.bind(this);
   }
 
   componentDidMount() {
@@ -33,10 +34,32 @@ class SubmitForm extends React.Component {
     })
   }
 
+  changeAll(){
+    let before=this.state.before
+    if(before.includes(0)){
+      before=before.map((item,index)=>{
+        if(item==0){
+          return 1
+        }
+        return item;
+      })
+    }
+    else{
+      before=before.map((item,index)=>{
+        if(item==1){
+          return 0
+        }
+        return item;
+      })
+    }
+    this.setState({before:before})
+  }
+
 
   submitRequire(){
-    let require=this.state.before;
+    let require=[...this.state.before];
     this.setState({require:require});
+    this.setState({start:1});
   }
 
   choose(item){
@@ -48,7 +71,6 @@ class SubmitForm extends React.Component {
       require[item['課'][i]]=item['課程名稱'][0].text
     }
     chosen=[...chosen,item]
-    console.log(chosen)
     this.setState({require:require})
     this.setState({before:before})
     this.setState({chosen:chosen})
@@ -89,10 +111,10 @@ class SubmitForm extends React.Component {
         <h1 className='security--header'>Lesson Picker</h1>
       </div>
       <div className='flex2'>
-        <TimeTable changeRequire={this.changeRequire} before={this.state.before} chosen={this.state.chosen} submitRequire={this.submitRequire} />
-        <ChosenTable chosen={this.state.chosen} choose={this.choose} unchoose={this.unchoose}/>
+        <TimeTable changeAll={this.changeAll} changeRequire={this.changeRequire} before={this.state.before} chosen={this.state.chosen} submitRequire={this.submitRequire} />
+        {this.state.chosen.length>0&&<ChosenTable chosen={this.state.chosen} choose={this.choose} unchoose={this.unchoose}/>}
       </div>
-      <LessonTable chosen={this.state.chosen} choose={this.choose} unchoose={this.unchoose}  require= {this.state.require} data={this.state.data} />
+      {this.state.start>0&&<LessonTable chosen={this.state.chosen} choose={this.choose} unchoose={this.unchoose}  require= {this.state.require} data={this.state.data} />}
     </div>
     );
   }
