@@ -44,7 +44,7 @@ class TimeTable extends React.Component {
     return(
         <div  className='timeTable'>
             <h2>目前課表</h2>
-            <table  style={{"table-layout": "fixed",}}>
+            <table  style={{"table-layout": "fixed",width:800+'px'}}>
                 <tbody>
                     <tr>
                         {tablehead}
