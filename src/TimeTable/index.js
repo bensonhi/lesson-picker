@@ -44,7 +44,7 @@ class TimeTable extends React.Component {
     return(
         <div  className='timeTable'>
             <h2>  目前課表</h2>
-            <input style={{display:"inline",float: "right"}} type="file" name="file" onChange={e=>this.uploadFile(e)} />
+            <input style={{display:"inline",float: "right"}} type="file" name="file" onChange={e=>this.props.uploadFile(e)} />
             <table  style={{"tablelayout": "fixed",width:800+'px'}}>
                 <tbody>
                     <tr>
