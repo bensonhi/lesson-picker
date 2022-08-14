@@ -48,6 +48,8 @@ class LessonTable extends React.Component {
                 return acc
             }, [<th key={"blank"}></th>])
         }
+        const blob = new Blob(chosen.reduce((previous,now)=>{previous.push(now['課號']);return previous},[]));
+        const fileDownloadUrl = URL.createObjectURL(blob);
         return (
             <div>
                 <h2>已選課程</h2>
@@ -60,9 +62,9 @@ class LessonTable extends React.Component {
                     </tbody>
                 </table>
                 <a
-                    href={this.state.fileDownloadUrl}
-                    ref={e => this.dofileDownload = e}
-                >download it</a>
+                    download="已選課表"
+                    href={fileDownloadUrl}
+                >輸出課表</a>
             </div>
         );
     }
