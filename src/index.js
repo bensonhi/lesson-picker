@@ -139,7 +139,7 @@ class SubmitForm extends React.Component {
     return(
     <div>
       <div className='flex1'>
-        <h1 className='security--header'>Lesson Picker</h1>
+        <h1 className='security--header'>Lesson Picker for NTUT</h1>
       </div>
       <div className='flex2'>
         <TimeTable changeAll={this.changeAll} changeRequire={this.changeRequire} before={this.state.before} chosen={this.state.chosen} submitRequire={this.submitRequire} uploadFile={this.uploadFile} />
