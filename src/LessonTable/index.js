@@ -131,6 +131,7 @@ class LessonTable extends React.Component {
     return (
       <div>
         <h2>可選課程 {length}</h2>
+        <h5>每頁顯示 {this.state.NumPerPage} 筆 <br/> 目前頁數: {this.state.pageNum}</h5>
         <button onClick={() => this.setNumPerPage(25)}>25</button>
         <button onClick={() => this.setNumPerPage(50)}>50</button>
         <button onClick={() => this.setPageNum(this.state.pageNum + 1)}>
@@ -145,6 +146,7 @@ class LessonTable extends React.Component {
             {content}
           </tbody>
         </table>
+        <h2>目前頁數: {this.state.pageNum} </h2>
         <button onClick={() => this.setPageNum(this.state.pageNum + 1)}>
           next page
         </button>
