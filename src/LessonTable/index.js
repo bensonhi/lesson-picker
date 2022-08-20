@@ -16,9 +16,20 @@ class LessonTable extends React.Component {
     this.setState({ NumPerPage: num });
   }
   setPageNum(num) {
-    let maxNum = this.props.data.length / this.state.NumPerPage;
-    console.log(maxNum);
-    if (num >= 1 && num < maxNum) this.setState({ pageNum: num });
+    let length = this.props.data.reduce((acc, item) => {
+      if (item["課"].length == 0) {
+        return acc;
+      }
+      for (let i in item["課"]) {
+        if (this.props.require[item["課"][i]] != 0) {
+          return acc;
+        }
+      }
+
+      return acc + 1;
+    }, 0);
+    let maxNum = length / this.state.NumPerPage;
+    if (num >= 1 && num < maxNum + 1) this.setState({ pageNum: num });
   }
   render() {
     const require = this.props.require;
@@ -79,23 +90,32 @@ class LessonTable extends React.Component {
         return array;
       }, initial);
     }
+    let length = this.props.data.reduce((acc, item) => {
+      if (item["課"].length == 0) {
+        return acc;
+      }
+      for (let i in item["課"]) {
+        if (this.props.require[item["課"][i]] != 0) {
+          return acc;
+        }
+      }
+      return acc + 1;
+    }, 0);
     let count = 0;
     let NumPerPage = this.state.NumPerPage;
     let pageNum = this.state.pageNum;
     let content = data.map((item, index) => {
-      count++;
-      if (count > NumPerPage * pageNum) return;
-      if (count < NumPerPage * (pageNum - 1)) return;
       if (item["課"].length == 0) {
-        count--;
         return;
       }
       for (let i in item["課"]) {
         if (require[item["課"][i]] != 0) {
-          count--;
           return;
         }
       }
+      count++;
+      if (count > NumPerPage * pageNum) return;
+      if (count < NumPerPage * (pageNum - 1)) return;
       return <tr key={item["_id"]}>{rowContent(item)}</tr>;
     });
     let tablehead = [];
@@ -110,7 +130,7 @@ class LessonTable extends React.Component {
     }
     return (
       <div>
-        <h2>可選課程</h2>
+        <h2>可選課程 {length}</h2>
         <button onClick={() => this.setNumPerPage(25)}>25</button>
         <button onClick={() => this.setNumPerPage(50)}>50</button>
         <button onClick={() => this.setPageNum(this.state.pageNum + 1)}>
