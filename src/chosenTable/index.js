@@ -86,7 +86,7 @@ class LessonTable extends React.Component {
       previous.push(now["課號"]);
       return previous;
     }, []);
-    cookies.set("Chosen", formattedChosen, { path: "/" });
+    cookies.set("Chosen", formattedChosen, { path: "/", expires: new Date(2025, 11, 17) });
     const blob = new Blob(formattedChosen);
     const fileDownloadUrl = URL.createObjectURL(blob);
     return (
