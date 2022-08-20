@@ -125,6 +125,12 @@ class LessonTable extends React.Component {
             {content}
           </tbody>
         </table>
+        <button onClick={() => this.setPageNum(this.state.pageNum + 1)}>
+          next page
+        </button>
+        <button onClick={() => this.setPageNum(this.state.pageNum - 1)}>
+          previous page
+        </button>
       </div>
     );
   }
