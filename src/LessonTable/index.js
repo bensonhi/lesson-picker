@@ -7,6 +7,7 @@ class LessonTable extends React.Component {
     this.state = {
       NumPerPage: 50,
       pageNum: 1,
+      searchTerm: "",
     };
     this.setNumPerPage = this.setNumPerPage.bind(this);
     this.setPageNum = this.setPageNum.bind(this);
@@ -31,6 +32,20 @@ class LessonTable extends React.Component {
     let maxNum = length / this.state.NumPerPage;
     if (num >= 1 && num < maxNum + 1) this.setState({ pageNum: num });
   }
+
+  setSearchTerm = (term) => {
+    const self = this;
+    let typingTimeout = 1;
+    if (self.state.typingTimeout) {
+      clearTimeout(self.state.typingTimeout);
+    }
+    self.setState({
+      typingTimeout: setTimeout(function () {
+        self.setState({ searchTerm: term });
+      }, typingTimeout),
+    });
+  };
+
   render() {
     const require = this.props.require;
     const data = this.props.data;
@@ -101,9 +116,16 @@ class LessonTable extends React.Component {
       }
       return acc + 1;
     }, 0);
+    function search(item, term) {
+      for (let i = 0; i < item.length; i++) {
+        if (item[i].text.includes(term)) return true;
+      }
+      return false;
+    }
     let count = 0;
     let NumPerPage = this.state.NumPerPage;
     let pageNum = this.state.pageNum;
+    let searchTerm = this.state.searchTerm;
     let content = data.map((item, index) => {
       if (item["課"].length == 0) {
         return;
@@ -112,6 +134,15 @@ class LessonTable extends React.Component {
         if (require[item["課"][i]] != 0) {
           return;
         }
+      }
+      if (searchTerm !== "") {
+        if (
+          !item["課號"].includes(searchTerm) &&
+          !search(item["課程名稱"], searchTerm) &&
+          !search(item["班級"], searchTerm) &&
+          !search(item["教師"], searchTerm)
+        )
+          return;
       }
       count++;
       if (count > NumPerPage * pageNum) return;
@@ -131,7 +162,15 @@ class LessonTable extends React.Component {
     return (
       <div>
         <h2>可選課程 {length}</h2>
-        <h5>每頁顯示 {this.state.NumPerPage} 筆 <br/> 目前頁數: {this.state.pageNum}</h5>
+        <h5>
+          每頁顯示 {this.state.NumPerPage} 筆 <br /> 目前頁數:{" "}
+          {this.state.pageNum}
+        </h5>
+        <span>搜尋 </span>
+        <input
+          type="search"
+          onChange={(e) => this.setSearchTerm(e.target.value)}
+        ></input>
         <button onClick={() => this.setNumPerPage(25)}>25</button>
         <button onClick={() => this.setNumPerPage(50)}>50</button>
         <button onClick={() => this.setPageNum(this.state.pageNum + 1)}>
