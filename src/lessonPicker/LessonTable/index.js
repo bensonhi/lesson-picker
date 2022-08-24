@@ -3,6 +3,17 @@ import styles from "./index.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong,faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 
+    function search(item, term) {
+      for (let i = 0; i < item.length; i++) {
+        if (item[i].text.includes(term)) return true;
+      }
+      return false;
+    }
+
+let content=[];
+let length=0;
+
+
 class LessonTable extends React.Component {
   constructor(props) {
     super(props);
@@ -14,23 +25,42 @@ class LessonTable extends React.Component {
     this.setNumPerPage = this.setNumPerPage.bind(this);
     this.setPageNum = this.setPageNum.bind(this);
   }
+  componentDidUpdate() {
+      let NumPerPage = this.state.NumPerPage;
+          let pageNum = this.state.pageNum;
+    const require = this.props.require;
+    length=0;
+    const data = this.props.data;
+    let searchTerm = this.state.searchTerm;
+    content=data.reduce((acc,item, index) => {
+      if (item["課"].length == 0) {
+        return acc;
+      }
+      for (let i in item["課"]) {
+        if (require[item["課"][i]] != 0) {
+          return acc;
+        }
+      }
+      if (searchTerm !== "") {
+        if (
+          !item["課號"].includes(searchTerm) &&
+          !search(item["課程名稱"], searchTerm) &&
+          !search(item["班級"], searchTerm) &&
+          !search(item["教師"], searchTerm)
+        )
+          return acc;
+      }
+      length++;
+      if (length > NumPerPage * pageNum) return acc;
+      if (length < NumPerPage * (pageNum - 1)) return acc;
+      return [...acc,item];
+    },[]);
+  }
 
   setNumPerPage(num) {
     this.setState({ NumPerPage: num });
   }
   setPageNum(num) {
-    let length = this.props.data.reduce((acc, item) => {
-      if (item["課"].length == 0) {
-        return acc;
-      }
-      for (let i in item["課"]) {
-        if (this.props.require[item["課"][i]] != 0) {
-          return acc;
-        }
-      }
-
-      return acc + 1;
-    }, 0);
     let maxNum = length / this.state.NumPerPage;
     if (num >= 1 && num < maxNum + 1) this.setState({ pageNum: num });
   }
@@ -44,12 +74,13 @@ class LessonTable extends React.Component {
     self.setState({
       typingTimeout: setTimeout(function () {
         self.setState({ searchTerm: term });
+        self.setPageNum(1);
+                self.setState({ searchTerm: term });
       }, typingTimeout),
     });
   };
 
   render() {
-    const require = this.props.require;
     const data = this.props.data;
     const unchoose = this.props.unchoose;
     const choose = this.props.choose;
@@ -107,50 +138,9 @@ class LessonTable extends React.Component {
         return array;
       }, initial);
     }
-    let length = this.props.data.reduce((acc, item) => {
-      if (item["課"].length == 0) {
-        return acc;
-      }
-      for (let i in item["課"]) {
-        if (this.props.require[item["課"][i]] != 0) {
-          return acc;
-        }
-      }
-      return acc + 1;
-    }, 0);
-    function search(item, term) {
-      for (let i = 0; i < item.length; i++) {
-        if (item[i].text.includes(term)) return true;
-      }
-      return false;
-    }
     let count = 0;
-    let NumPerPage = this.state.NumPerPage;
     let pageNum = this.state.pageNum;
-    let searchTerm = this.state.searchTerm;
-    let content = data.map((item, index) => {
-      if (item["課"].length == 0) {
-        return;
-      }
-      for (let i in item["課"]) {
-        if (require[item["課"][i]] != 0) {
-          return;
-        }
-      }
-      if (searchTerm !== "") {
-        if (
-          !item["課號"].includes(searchTerm) &&
-          !search(item["課程名稱"], searchTerm) &&
-          !search(item["班級"], searchTerm) &&
-          !search(item["教師"], searchTerm)
-        )
-          return;
-      }
-      count++;
-      if (count > NumPerPage * pageNum) return;
-      if (count < NumPerPage * (pageNum - 1)) return;
-      return <tr key={item["_id"]}>{rowContent(item)}</tr>;
-    });
+
     let tablehead = [];
     if (typeof data[0] === "object") {
       tablehead = Object.entries(data[0]).reduce(
@@ -161,6 +151,12 @@ class LessonTable extends React.Component {
         [<th key={"blank"}></th>]
       );
     }
+    console.log(content)
+    let Lcontent=content.map((item)=>{console.log(item)
+    return <tr key={item["_id"]}>{rowContent(item)}</tr>
+
+    })
+
     return (
       <div>
         <h2>可選課程 {length}</h2>
@@ -195,7 +191,7 @@ class LessonTable extends React.Component {
         <table style={{ minWidth: 960 + "px" }} className="lessonTable">
           <tbody>
             <tr key={"heading"}>{tablehead}</tr>
-            {content}
+            {Lcontent}
           </tbody>
         </table>
         <h2>目前頁數: {this.state.pageNum} </h2>
