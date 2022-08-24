@@ -1,0 +1,1070 @@
+{
+  "app": {
+    "homepage": "Homepage",
+    "title": "IBM Data Explorer",
+    "errorPage": "Error Page",
+    "threatHuntPage": "Hunts (beta)",
+    "searchpageTitle": "Data Explorer - Search Results",
+    "permissionTitle": "Data Explorer - Subscribe",
+    "exportTitle": "Data Explorer - Export Results",
+    "threatHuntPageTitle": "Data Explorer - Threat Hunting Results",
+    "titles": {
+      "search": "Search Results"
+    },
+    "tabs": {
+      "federatedSearch": "Federated search",
+      "threatHunt": "Threat hunt (beta)",
+      "returnToThreatHunt": "Return to Threat hunt (beta)"
+    }
+  },
+  "help": {
+    "general": "What is Data Explorer?",
+    "query": "How do I build a query?",
+    "explore": "How do I explore my results?"
+  },
+  "ui": {
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "close": "Close",
+    "loadMore": "Load more",
+    "loadMoreCount": "Load {{value}} more",
+    "viewingCount": "Viewing {{value}} of {{total}}",
+    "backToTop": "Scroll back to top",
+    "export": "Export",
+    "on": "on",
+    "off": "off",
+    "updateResults": "Update results",
+    "no": "No",
+    "closeIconDescription": "Cancel and dismiss warning",
+    "openPayload": "Open payload",
+    "loading": "Loading",
+    "learnMore": "Learn more"
+  },
+  "visualBuilderBanner": {
+    "title": "Search without STIX knowledge",
+    "content": "Now you can search without previous knowledge of STIX in the Visual builder. Start a query by adding conditions that include an IP address, a URL, or a hashtag. You can also toggle between the Visual builder tab and the Advanced builder tab to learn how to write your own advanced queries.",
+    "okBtn": "OK",
+    "close": "Close"
+  },
+  "tableQuickSearch": {
+    "label": "Quick search results",
+    "placeholder": "Quick search"
+  },
+  "contentSwitcher": {
+    "visualBuilder": "Visual builder",
+    "advancedBuilder": "Advanced builder"
+  },
+  "visualBuilder": {
+    "submitQueryShortcutDesc": "Press Ctrl + Enter to run the query",
+    "title": "STIX",
+    "addTimeFrame": "Add a timeframe",
+    "editObjectPath": "Edit observable",
+    "clear": "Clear",
+    "placeholder": "Click to create your query in the Visual builder",
+    "conditionNotFinished": "Your condition is not complete",
+    "incompleteErrorMessage": "Incomplete statement, please press enter or return to input value to complete the statement.",
+    "conditionsTree": {
+      "label": {
+        "objectPath": "Observable",
+        "operator": "Operator",
+        "logicOperator": "Condition logical operator",
+        "startQuery": "Start a query",
+        "addAnotherCondition": "Add another condition",
+        "addConditionSet": "Add a condition set",
+        "deleteCondition": "Delete the condition",
+        "deleteConditionSet": "Delete the condition set"
+      },
+      "value": {
+        "label": "Value",
+        "textInputPlaceholder": "Type a value and press Enter to add, or press Shift + Enter to add multiple values respectively.",
+        "numberInputPlaceholder": "Type multiple values, and then press Enter.",
+        "booleanInputLabel": "Choose a value",
+        "removeValue": "Remove {{value}}",
+        "addTimeStampButton": "Add a timestamp"
+      },
+      "error": {
+        "invalidValue": "\"{{inputValue}}\" is an invalid value. {{detail}}",
+        "invalidValueList": "\"{{inputValue}}\" are invalid values. {{detail}}",
+        "invalidIpv4": "Valid IPv4 example: 192.0.2.0",
+        "invalidIpv6": "Valid IPv6 example: 2001:0DB8:0:0:0:0:0:0",
+        "invalidEmail": "Valid email address format example: username@company.com",
+        "invalidUrl": "Valid URL example: https://ibm.com",
+        "invalidDomain": "Valid domain name example: example.domain.com",
+        "invalidMAC": "Valid MAC address examples: 2c:54:91:88:c9:e3",
+        "invalidHash": "Enter a {{kind}} hash",
+        "invalidHex": "Valid hex value should have even hexadecimal digits in [a-f0-9]",
+        "invalidMultipleTypes": "Enter a type: {{typeList}}",
+        "noValue": "Please press enter or return to input value to complete the statement",
+        "invalidPort": "Port value must be an integer between 0 and 65535",
+        "invalidNumber": "Enter a value"
+      },
+      "operators": {
+        "equal": "is equal to",
+        "notEqual": "is not equal to",
+        "greater": "greater than",
+        "greaterEqual": "greater than/equal to",
+        "less": "less than",
+        "lessEqual": "less than/equal to"
+      },
+      "conditionSetOperators": {
+        "and": " {{queryText}} (The preceding and the following conditions must both be met.)",
+        "or": "{{queryText}} (Either of the preceding and the following conditions is met.)"
+      }
+    },
+    "objectPathTearsheet": {
+      "heading": "Select an observable",
+      "searchClear": "clear",
+      "searchPlaceholder": "Search observables",
+      "searchHistory": "Recent",
+      "noMatchedPath": "No matched observables.",
+      "historyClear": "Clear",
+      "observableInfo": "Information of the observable",
+      "tooltipHeading": "Aliases:"
+    }
+  },
+  "queryTransformWarningModal": {
+    "title": "Your query cannot be converted.",
+    "desc": "Data Explorer cannot convert your query changes into the Visual builder. You can continue working in the Advanced builder, or you can discard the query changes and use the Visual builder instead.",
+    "stay": "Stay in the Advanced builder",
+    "discard": "Discard and open the visual builder",
+    "close": "Close"
+  },
+  "queryBuilder": {
+    "suggestionHelperText": {
+      "timeframe": "timeframe"
+    },
+    "tabs": {
+      "stix": "STIX",
+      "aql": "AQL"
+    },
+    "dataSources": {
+      "allSelected": "All data sources",
+      "selectDataSource": "Select data source",
+      "dataSources": "Data sources",
+      "tooltips": {
+        "closeMenu": "Close data source menu",
+        "openMenu": "Open data source menu",
+        "clearAll": "Clear all",
+        "clearSelection": "Clear selection",
+        "errorStatus": "A data source error has occurred. Check your data source configurations.",
+        "warningStatus": "This data source is busy processing other requests. Your queries have been placed in the queue."
+      }
+    },
+    "editor": {
+      "label": "Enter query",
+      "syntaxError": "This query contains a syntax error.",
+      "syntaxError_plural": "This query contains syntax errors.",
+      "fetchingDataSources": "Loading data sources.",
+      "placeholders": {
+        "stix": "Create a query for IPs, URLs, MD5 hashes, and more",
+        "aql": "Query all your QRadar sources with AQL"
+      }
+    },
+    "runQuery": "Run query",
+    "submissionStatus": {
+      "submitting": "Submitting query.",
+      "submitted": "Submitted query successfully.",
+      "error": "Failed to submit query. Please try again."
+    },
+    "stixPattern": {
+      "primitiveTypes": {
+        "IntPosLiteral": "positive integer",
+        "IntNegLiteral": "negative integer",
+        "FloatPosLiteral": "positive floating point number",
+        "FloatNegLiteral": "negative floating point number",
+        "StringLiteral": "string",
+        "BinaryLiteral": "binary string",
+        "HexLiteral": "hexadecimal string",
+        "TimestampLiteral": "timestamp string",
+        "BoolLiteral": "boolean",
+        "value": "value"
+      },
+      "errors": {
+        "qb_unexpected_expression": "Unexpected expression '{{0}}', an expression must be followed by an operator or a qualifier.",
+        "qb_multiple_repeated_qualifiers": "Multiple REPEATED qualifiers are not allowed.",
+        "qb_multiple_within_qualifiers": "Multiple WITHIN qualifiers are not allowed.",
+        "qb_multiple_start_stop_qualifiers": "Multiple START STOP qualifiers are not allowed.",
+        "qb_value_not_allowed_timestamp_required": "This value type is not allowed for this object path. A timestamp string is required.",
+        "qb_value_not_allowed_value_required": "This value type is not allowed for this object path. A $t(queryBuilder.stixPattern.primitiveTypes.{{0}}) is required.",
+        "qb_type_expected_to_complete_expression": "A $t(queryBuilder.stixPattern.primitiveTypes.{{0}}) is required to complete this expression.",
+        "qb_expecting_start_stop": "Expecting `START t'' STOP t''`",
+        "qb_unexpected_expression_did_you_mean": "Unexpected expression '{{0}}'. Did you mean '{{1}}' instead?",
+        "qb_value_expected_to_complete_expression": "A value is required to complete this expression.",
+        "qb_thl_variable_not_in_var_list": "Kestrel variable provided is not in the list of valid variables",
+        "qb_thl_props_after_var_required": "Column name after variable is required",
+        "qb_thl_column_not_in_column_list": "Kestrel columns provided is not in the list of valid columns",
+        "qb_thl_invalid_column_format": "This is not a valid Kestrel column name",
+        "qb_fallback": "STIX 2.0 pattern error."
+      }
+    }
+  },
+  "queryBuilderDialog": {
+    "close": "Close dialog",
+    "label": "Start a query"
+  },
+  "searchHeader": {
+    "breadcrumbOverflowAriaLabel": "Search results page breadcrumb"
+  },
+  "search": {
+    "noMatchFilters": "No data matches filter criteria",
+    "noMatchSearch": "No data matches search criteria",
+    "placeholder": "Please enter a query and click run query.",
+    "errorMessage": "Error: {{value}}",
+    "errorMessage_plural": "Error {{index}}: {{value}}",
+    "canNotRunQueryWithoutDataSources": "Can not run query without connected data sources.",
+    "analyticNamesError": "Data Explorer was unable to retrieve the following enrichments: {{value}}."
+  },
+  "artifactDialog": {
+    "title": "Add artifact to case",
+    "findingTitle": "Add finding to case",
+    "ariaLabel": "Add artifact to case Modal",
+    "artifactName": "Name",
+    "artifactNamePlaceholder": "Add a name for this artifact",
+    "findingArtifactNamePlaceholder": "Add a name for this finding",
+    "descriptionLabel": "Description (Optional)",
+    "descriptionPlaceholder": "Add a description for this artifact. The description cannot be edited after it is submitted.",
+    "findingDescriptionPlaceholder": "Add a description for this finding. The description cannot be edited after it is submitted.",
+    "primaryButton": "Add artifact",
+    "findingPrimaryButton": "Add finding",
+    "secondaryButton": "Cancel",
+    "caseSelectionLabel": "Case name",
+    "selectorPlaceholderLabel": "Find a case or type a new case name",
+    "invalidText": "Invalid text",
+    "createNewCase": "Create new case called:",
+    "loading": "Loading cases",
+    "submitting": "Sending request",
+    "artifactSummary": "Artifact summary",
+    "findingSummary": "Finding summary",
+    "queryDetails": "Query details",
+    "resultDetails": "Result details",
+    "valueDetails": "{{field}} details",
+    "addedBy": "Added by",
+    "dataSourcesQueried": "Data sources queried",
+    "resultsReturned": "Results returned",
+    "observedCount": "Observed count",
+    "indicatorType": "Type",
+    "indicatorValue": "Value",
+    "requiredName": "Name is required.",
+    "requiredCaseName": "Case name is required.",
+    "error": "Error.",
+    "errorFetchIncident": "Failed to get cases.",
+    "errorCreateIncident": "Failed to create new case.",
+    "errorAddArtifact": "Failed adding artifact to case.",
+    "errorAddFinding": "Failed adding finding to case.",
+    "errorAccountID": "Failed to get account id."
+  },
+  "dateTimeHelper": {
+    "cancel": "Cancel",
+    "applyCustomRange": "Apply custom range",
+    "clear": "Clear",
+    "apply": "Apply"
+  },
+  "date": {
+    "label": "Date",
+    "stop": "Stop date",
+    "start": "Start date",
+    "placeholderFormat": "mm/dd/yyyy",
+    "quickRange": "Quick range",
+    "customRange": "Custom range",
+    "quickRangeMinutes": "Last {{value}} minutes",
+    "quickRangeHours": "Last {{value}} hours",
+    "quickRangeDays": "Last {{value}} days",
+    "pickerError": "Range start must come before range end",
+    "useCurrentDateTime": "Use current date and time",
+    "utcStatement": "Date and time are represented in Coordinated Universal Time (UTC)."
+  },
+  "time": {
+    "label": "Time",
+    "start": "Start time",
+    "stop": "Stop time",
+    "picker": {
+      "formLabel": "Select time",
+      "amLabel": "AM",
+      "hourLabel": "hour",
+      "hourAbbreviation": "hh",
+      "meridiemLabel": "AM/PM",
+      "minuteLabel": "minute",
+      "minuteAbbreviation": "mm",
+      "pmLabel": "PM",
+      "secondLabel": "second",
+      "secondAbbreviation": "ss"
+    }
+  },
+  "filter": {
+    "filter": "Filter",
+    "filters": "Filters",
+    "viewMore": "View more",
+    "viewMoreCount": "View more ({{hidden}})",
+    "viewLess": "View less",
+    "noMatch": "No filter matches your search",
+    "find": "Find filter...",
+    "showPanel": "Show filters",
+    "hidePanel": "Hide filters",
+
+    "selectedViewMore": "+ {{tagCount}} more",
+    "selectedViewLess": "- View less",
+
+    "applyIsFilter": "Apply IS filter",
+    "applyNotFilter": "Apply NOT filter",
+    "removeIsFilter": "Remove IS filter",
+    "removeNotFilter": "Remove NOT filter",
+    "removeFilter": "Remove filter",
+    "clear": "Clear filters",
+
+    "selectionOptionsMenu": "Selection options for filter {{filter}}",
+    "countLabel": "{{items}} result items",
+    "countWithTotalLabel": "{{items}} out of {{totalItems}} result items",
+
+    "section": {
+      "dataSources": "Data sources",
+      "observedData": "Observed data",
+      "customProperties": "Custom properties"
+    }
+  },
+  "errors": {
+    "fallback": "An error occurred. No additional information is available. Contact your system administrator.",
+    "fallbackTitle": "Error",
+    "noUdsConfig": "Failed to retrieve configured sources. Please contact your system administrator.",
+    "badUdsCallout": "To use Data Explorer, a connected data source is required.",
+    "badUdsCalloutNotAdmin": "To use Data Explorer, a connected data source is required. Contact your administrator for assistance.",
+    "badUdsLink": "Connect data sources",
+    "gettingQueries": "Failed to retrieve queries. Please contact your system administrator.",
+    "noQueries": "No queries found.",
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundMessage": "This page could not be found.",
+    "request_timeout": "Request Timeout",
+    "requestTimeoutMessage": "The page took too long to respond. Please try again later. If this continues to occur, please contact your administrator.",
+    "returnToPrevious": "Return to previous page",
+    "ana_results_not_available": "The query result is not yet available.",
+    "ana_unable_to_calculate_metadata": "The metadata for the result cannot be processed.",
+    "aut_no_token_provided": "The user cannot be verified.  Log out of your account and log in again.",
+    "aut_invalid_token": "Your session has ended. Log out of your account and log in again.",
+    "aut_no_user_info": "The user information cannot be found.",
+    "cld_connection_error": "$t(errors.service_unavailable)",
+    "cld_search_not_found": "The query information cannot be found.",
+    "cld_unable_to_delete_searches": "The queries cannot be deleted.",
+    "cld_unable_to_delete_search": "The query cannot be deleted.",
+    "cld_unable_to_update_search": "The query cannot be updated.",
+    "de_query_id_not_found": "Query with provided ID was not found.",
+    "de_indexing_failure": "Error found indexing results.",
+    "de_getting_results_failure": "Unable to get result data.",
+    "de_no_result_data": "No data matches search criteria.",
+    "de_invalid_value": "You have entered an invalid value.",
+    "de_missing_field": "All mandatory fields must be completed.",
+    "de_runtime_error": "$t(errors.fallback)",
+    "de_status_code_error": "$t(errors.fallback)",
+    "de_query_quota_exceeded": "Monthly query quota exceeded for this account. Contact your system administrator.",
+    "ent_not_entitled": "$t(errors.forbidden)",
+    "ent_status_code_error": "Unable to verify your account. Contact your system administrator.",
+    "invalid_parameter": "All parameters must be completed.",
+    "token_verification_failed": "Your session has ended. Log out of your account and log in again.",
+    "invalid_permissions": "$t(errors.forbidden)",
+    "service_unavailable_entitlements": "Unable to verify your account. Contact your system administrator.",
+    "invalid_parameter_type": "Datasource configuration has changed. Reload the page.",
+    "invalid_parameter_configuration_id": "$t(errors.invalid_parameter_type",
+    "invalid_stix_pattern": "Unable to parse stix.",
+    "invalid_parameter-stix_conversion": "The stix pattern cannot be converted to this datasource.",
+    "not_implemented-wrong_parameter": "$t(errors.fallback)",
+    "not_implemented-unsupported": "$t(errors.fallback)",
+    "unknown": "$t(errors.fallback)",
+    "unexpected_error": "Unexpected error",
+    "no_datasources": "Unavailable to connect with datasource. Contact your system administrator",
+    "service_unavailable": "Service currently unavailable. Try again later.",
+    "service_unavailable_cloudant": "$t(errors.service_unavailable)",
+    "service_unavailable_configuration": "$t(errors.service_unavailable)",
+    "service_unavailable_secure_gateway": "$t(errors.service_unavailable)",
+    "service_unavailable_openwhisk": "$t(errors.service_unavailable)",
+    "forbidden": "This service is not available for your account. Contact your system administrator.",
+    "callback_error": "$t(errors.fallback)",
+    "no_results": "$t(search.noMatchSearch)",
+    "service_unavailable_cos": "$t(errors.forbidden)",
+    "service_unavailable_cos_bucket": "$t(errors.forbidden)",
+    "service_unavailable_cos_url": "$t(errors.forbidden)",
+    "invalid_parameter-queryResults": "$t(errors.fallback)",
+    "service_unavailable-pre_signed_url": "$t(errors.forbidden)",
+    "invalid_parameter-datasourceQueue": "$t(errors.fallback)",
+    "exportBadRequestTitle": "Bad request",
+    "exportBadRequest": "We were unable to generate a valid URL for your file.",
+    "exportMissingQueryId": "Search record does not contain a query id.",
+    "exportUnableToReachService": "Unable to get results.",
+    "exportFallbackError": "Failed to export results. Please close this tab and try to export your file again."
+  },
+  "queries": {
+    "queryTitle": "Queries",
+    "syntaxResults": "{{syntax}} results",
+    "removeQuery": "Remove query",
+    "checkConfigAdmin": "Check the configuration of your data sources or get support within the IBM Support Portal.",
+    "checkConfig": "Contact your administrator to check the configuration or get support within the IBM Support Portal.",
+    "configureLink": "Configure data sources",
+    "supportLink": "IBM Support Portal",
+    "closeFooter": "Close query information panel",
+    "dataSource": "Data Sources",
+    "dateRange": "Time frame",
+    "duration": "Duration:",
+    "editQuery": "Edit query",
+    "expiring": "Expiring",
+    "expired": "Expired",
+    "submitting": "Submitting",
+    "running": "Running",
+    "partialResults": "Partial results",
+    "noResult": "No result",
+    "error": "Error",
+    "cancelled": "Cancelled",
+    "unknown": "Unknown",
+    "queryStatus": "Query status",
+    "expiresOn": "Expires on",
+    "expiredOn": "Expired on",
+    "queriedSources": "{{numerator}}/{{denominator}} sources queried",
+    "failedSources": "{{numerator}}/{{denominator}} sources failed",
+    "sources": "Data sources: {{names}}",
+    "queued": "Waiting in queue",
+    "queryComplete": "Query complete",
+    "rerunQuery": "Run query again",
+    "createHunt": "Create hunt",
+    "requestStatus": "Request status",
+    "results": "Results",
+    "complete": "Complete",
+    "submittingQuery": "Submitting query",
+    "runningQuery": "Running query",
+    "processingData": "Processing data",
+    "timeRange": "Time Range",
+    "viewError": "View error",
+    "viewWarning": "View warning",
+    "loadingResults": "Loading results",
+
+    "rerunWarning": {
+      "warning": "Warning",
+      "heading": "Some data sources are not available",
+      "description": "Some of the data sources for this query are no longer available. They may have been removed since this query was created.",
+      "runAnyway": "Run query anyway",
+      "editQuery": "$t(queries.editQuery)"
+    },
+
+    "cancelWarning": {
+      "dialogName": "Cancel confirmation dialog",
+      "heading": "Are you sure you want to cancel?",
+      "description": "Cancelling the operation will stop the search, but your query and the current results will be stored in the card.",
+      "cancelSearch": "Cancel search",
+      "successNotificationTitle": "This search has been cancelled",
+      "successNotificationSubtitle": "The current search results can be viewed on the main search page",
+      "errorNotificationTitle": "Failed to cancel the search",
+      "errorNotificationSubtitle": "Contact your administrator or try it later",
+      "422NotificationSubtitle": "You cannot cancel this query because it is already completed"
+    },
+
+    "removeWarning": {
+      "dialogName": "Remove confirmation dialog",
+      "heading": "Are you sure you want to remove?",
+      "description": "Removing your query will cause your query and search results be deleted.",
+      "removeQuery": "Remove query"
+    },
+
+    "completeToast": {
+      "title": "Result Complete!"
+    },
+
+    "notification": {
+      "archiveFailed": "Query could not be removed. Try again.",
+      "archiveSuccess": "Query was successfully removed.",
+      "undoArchiveSuccess": "Query was successfully restored.",
+      "undoArchiveFailed": "Query could not be restored. Try again.",
+      "undoArchive": "Undo",
+      "dataExpiresTitle": "Query result data is expired. Run the query again.",
+      "errorTitle": "Error:",
+      "dataAvailabilityStatusFailed": "An unexpected error has occurred while retrieving your results. Please try again later."
+    },
+
+    "errors": {
+      "invalid_parameter": "The datasource was unable to process a parameter.",
+      "invalid_parameter_title": "Invalid parameter",
+      "invalid_query": "Submitter query is invalid.",
+      "invalid_query_title": "Invalid query",
+      "authentication_fail": "You are unable to contact the data source.",
+      "authentication_fail_title": "Authentication failed",
+      "authentication_error": "You are unable to contact the data source.",
+      "authentication_error_title": "Authentication error",
+      "invalid_permissions": "You are unable to contact the data source.",
+      "invalid_permissions_title": "Invalid permissions",
+      "service_unavailable": "The UDI Service is unavilable.",
+      "service_unavailable_title": "Service unavailable",
+      "forbidden": "You are unable to contact the data source.",
+      "forbidden_title": "Forbidden",
+      "no_results": "There are no results from the data source.",
+      "no_results_title": "No results",
+      "mapping_error": "The query could not be performed because the data source doesn't map to the indicators in the query",
+      "mapping_error_title": "Mapping error",
+      "unknown": "An unknown error occurred while querying this data source.",
+      "unknown_title": "Unknown",
+      "fallback": "The datasource returned a status error without an explanation.",
+      "fallback_title": "Unexplained",
+      "missing": "The datasource did not return any status information.",
+      "missing_title": "Missing"
+    },
+    "dataSourcesDetail": {
+      "questionMark": "?",
+      "resultsAvailable": "Results available:",
+      "checkConfigWithoutLink": "Contact your administrator to check the configuration or get support within the <0>{{supportLink}}</0>.",
+      "checkConfigWithLink": "Contact your administrator to check the configuration or get support within the IBM Support Portal."
+    }
+  },
+  "cases": {
+    "addToCase": "Add to case"
+  },
+  "entitlement": {
+    "subscription": {
+      "title": "You need access to Data Explorer to view this content. Please contact your administrator to grant you access.",
+      "subTitle": "What is Data Explorer?",
+      "description": "Search and analyze all of your data from one unified interface.",
+      "link": "Learn More"
+    }
+  },
+  "queriesTable": {
+    "title": "Expired queries",
+    "results": "{{value}} results",
+    "fields": {
+      "runDate": "Run date",
+      "count": "Results",
+      "q": "Query string",
+      "datetimeRange": "Timeframe",
+      "dataSources": "Data sources"
+    }
+  },
+  "results": {
+    "expand": "Expand result to view relationships",
+    "collapse": "Collapse result to view concise data",
+
+    "view": {
+      "switchTable": "Switch to table view",
+      "switchNarrative": "Switch to narrative view",
+      "customColumnBtn": "Customize columns"
+    },
+
+    "table": {
+      "overflowMenu": "Select an action.",
+      "sortTooltip": {
+        "sortInAscending": "Click to sort rows by {{headerName}} header in ascending order",
+        "sortInDescending": "Click to sort rows by {{headerName}} header in descending order",
+        "unsort": "Click to unsort rows by {{headerName}} header"
+      }
+    },
+
+    "addToCase": "Add to case",
+    "fieldsSelector": {
+      "placeholder": "Sort by",
+      "selectProperty": "Select a property"
+    },
+
+    "sort": {
+      "asc": "Ascending",
+      "desc": "Descending",
+      "none": "Sort direction"
+    },
+    "exportResults": {
+      "cancel": "Cancel",
+      "download": "Download",
+      "loadingIndicatorLabel": "Active loading indicator",
+      "loadingTitle": "Exporting results",
+      "loadingDescription": "Please keep this page open to automatically download results.",
+      "cancelledTitle": "Cancelled",
+      "cancelledDescription": "Your download is cancelled.",
+      "readyTitle": "Download",
+      "readyDescription": "Your results are available",
+      "failedTitle": "Failed",
+      "failedDescription": "Failed to export results."
+    },
+    "codeSnippet": {
+      "copy": "Copied!",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "ariaLabel": "STIX 2.0 code snippet"
+    },
+    "chart": {
+      "resultsOverTime": "Results over time",
+      "seriesName": "Event Count",
+      "seriesTooltip": "{{seriesName}}: {{count}}",
+      "resultCount": "Result Count",
+      "count": "Count",
+      "lastObserved": "Last observed",
+      "dateObserved": "Date observed",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "resetZoom": "Reset zoom"
+    },
+    "ica": {
+      "results": "Result Count",
+      "resultsComplete": "Result Count (Complete search)",
+      "resultsCancelled": "Result Count (Cancelled search)",
+      "enrichmentStatus": "Enrichment Status"
+    },
+    "stix": {
+      "created_by_ref": "Data source",
+      "last_observed": "Last observed"
+    },
+    "viewDetails": "View details",
+    "resultDetails": "Result details",
+    "stix20": "STIX 2.0",
+    "stix21": "STIX 2.1"
+
+  },
+  "panel": {
+    "close": "Close panel",
+    "newQuery": "Start a new query",
+    "error": "Error loading information"
+  },
+  "notification": {
+    "successMsg": "was successfully added to case <1>{{caseName}}</1>",
+    "successUndoMsg": "was removed from case <1>{{caseName}}</1>",
+    "errorUndoMsg": "undo artifact error",
+    "undo": "Undo artifact"
+  },
+  "atk": {
+    "selectProperty": "Select property",
+    "statisticsTitle": "Statistics",
+    "analytics": "Analytics",
+    "viewAnalytics":"View analytics",
+    "metadataNotGeneratedTitle": "Analytics",
+    "metadataNotGenerated": "Analytics failed to process your data. Please contact your administrator.",
+    "databaseErrorTitle": "Analytics",
+    "databaseError": "There was a database error. This can happen for many reasons, including non exisiting schema.",
+    "errorInstruction": "Analytics cannot be displayed. Refresh the page or get support within the IBM Support Portal.",
+    "ibmSupportPortal": "IBM Support Portal ",
+    "icaErrorTitle1": "Total features",
+    "icaErrorTitle2": "Distinct features",
+    "loadingText": "Processing data...",
+    "total": "Total",
+    "unique": "Unique"
+  },
+  "threatHuntTable": {
+    "name": "Name",
+    "description": "Description",
+    "steps": "Steps",
+    "relatedCase": "Related case",
+    "createdOn": "Created on",
+    "lastUpdated": "Last Updated",
+    "createHuntBtn": "Start a hunt",
+    "overflowMenuTitle": "Threat Hunt Table overflow menu",
+    "delete": "Delete hunt",
+    "retrieveError": {
+      "title": "Error",
+      "hunts": {
+        "title": "Unable to retrieve list of hunts",
+        "desc": "There was a problem retrieving hunts."
+      },
+      "contact": "Please contact your administrator."
+    }
+  },
+  "threatHuntPage": {
+    "placeholder": {
+      "noHuntId": "No hunt ID provided.",
+      "betaOff": "Threat Hunt feature (beta) is set to off."
+    },
+    "description": {
+      "viewLess": "View less",
+      "viewMore": "View more"
+    },
+    "editHuntBtn": "Edit hunt",
+    "addStepBtn": "Add a step",
+    "documentation": "Review Kestrel Threat Hunting Language documentation",
+    "initialStep": {
+      "title": "Start your hunt by adding a step",
+      "desc": "Threat hunting in Data Explorer utilizes the new open source Kestrel Threat Hunting Language to work with all your data to find anomalies and potential threats in your environment.",
+      "getStarted": "Get started on your hunt by adding your first step."
+    },
+    "empty": {
+      "stepTitle": "No steps created",
+      "stepDesc": "Continue your hunt by adding a step.",
+      "variableTitle": "No variables created",
+      "variableDesc": "Create variables by running steps.",
+      "emptyStepContent": {
+        "title": "No results returned",
+        "desc": "There was nothing there. Edit this step to try something else."
+      }
+    },
+    "error": {
+      "errorPage": {
+        "title": "Error"
+      },
+      "retrieve": {
+        "title": "Error",
+        "step": {
+          "title": "Unable to retrieve list of steps",
+          "desc": "There was a problem retrieving steps."
+        },
+        "variable": {
+          "title": "Unable to retrieve variables",
+          "desc": "There was a problem retrieving variables."
+        },
+        "stepContent": {
+          "title": "Unable to display variables or snapshot",
+          "desc": "There was a problem retrieving data."
+        },
+        "contact": "Please contact your administrator."
+      }
+    },
+    "stepTab": "Manage steps",
+    "variableTab": "View variables (data)"
+  },
+  "huntDialog": {
+    "requiredName": "Name is required and can't be more than {{NAME_MAX_LENGTH}} characters.",
+    "requiredDescription": "Description is required and can't be more than {{DESC_MAX_LENGTH}} characters.",
+    "createPrimaryButton": "Start a hunt",
+    "editPrimaryButton": "Update a hunt",
+    "secondaryButton": "Cancel",
+    "huntName": "Name",
+    "huntNamePlaceholder": "Create a name for your hunt",
+    "huntDescription": "Description",
+    "huntDescriptionPlaceholder": "Write a description for this hunt",
+    "error": "Error.",
+    "createHeading": "Create a hunt",
+    "editHeading": "Edit a hunt",
+    "createLoadingMessage": "Creating hunt",
+    "editLoadingMessage": "Updating hunt",
+    "stixQuery": "STIX query"
+  },
+  "threatHuntStepsTable": {
+    "stepName": "Step name",
+    "statement": "Kestrel statement",
+    "output": "Output",
+    "comment": "Comment",
+    "status": "Status",
+    "lastExecuted": "Last executed",
+    "editStep": "Edit step",
+    "deleteStep": "Delete",
+    "overflowMenuTitle": "Threat hunt steps table overflow menu",
+    "snapshot": "Snapshot"
+  },
+  "threatHuntVariableCard": {
+    "entities": "Entities",
+    "records": "Records",
+    "objectType": "Object type",
+    "origin": "Origin",
+    "createdOn": "Created on"
+  },
+  "threatHuntStep": {
+    "title": {
+      "new": "New step",
+      "add": "Add step",
+      "edit": "Edit step"
+    },
+    "subTitle": "Build a Kestrel statement to explore your data.",
+    "run": "Run",
+    "cancel": "Cancel",
+    "close": "Close",
+    "command": "Select a Kestrel statement template (optional)",
+    "stepName": "Create a step name",
+    "statement": "Kestrel statement",
+    "statementInvalidText": "Required",
+    "comment": "Leave a comment (optional)",
+    "commentPlaceholder": "Write a note about this step",
+    "reviewDocumentation": "Review Kestrel documentation",
+    "save": "Save without running",
+    "resources": "Resources",
+    "variables": "Variables",
+    "noVariablesTitle": "No variables created",
+    "noVariablesMessage": "This resource will be populated as you run steps.",
+    "dataSources": "Data Sources",
+    "analytics": "Analytics",
+    "availableColumns": "Available columns",
+    "errorTitle": "Error",
+    "errorVariablesSubtitle": "Unable to get list of variables",
+    "errorVariablesText": "There was a problem retrieving variables.",
+    "errorDataSourcesSubtitle": "Unable to get data sources",
+    "errorDataSourcesText": "There was a problem retrieving data sources.",
+    "errorAnalyticsSubtitle": "Unable to get analytics",
+    "errorAnalyticsText": "There was a problem retrieving analytics.",
+    "errorTryAgain": "Please try again later.",
+    "dataSourcesWarning": "This data source is too busy to accept new queries. It will be queued until existing queries are processed.",
+    "dataSourcesError": "This data source is in error state. Check data source configuration to resolve the issue.",
+    "formTemplateValue": {
+      "default": {
+        "selectText": "Select a template",
+        "stepPlaceholder": "Custom"
+      },
+      "get": {
+        "selectText": "GET: search your data sources",
+        "stepPlaceholder": "GET data"
+      },
+      "find": {
+        "selectText": "FIND: find related entities within a variable",
+        "stepPlaceholder": "FIND data"
+      },
+      "new": {
+        "selectText": "NEW: create variable",
+        "stepPlaceholder": "NEW variable"
+      },
+      "apply": {
+        "selectText": "APPLY: apply analytics on a variable",
+        "stepPlaceholder": "APPLY analytics"
+      },
+      "disp": {
+        "selectText": "DISP: create snapshot",
+        "stepPlaceholder": "DISP variable"
+      },
+      "sort": {
+        "selectText": "SORT: sort columns",
+        "stepPlaceholder": "SORT variable"
+      },
+
+      "group": {
+        "selectText": "GROUP: group data by a column",
+        "stepPlaceholder": "GROUP data"
+      },
+      "copy": {
+        "selectText": "COPY: copy data to a new variable",
+        "stepPlaceholder": "COPY data"
+      },
+      "merge": {
+        "selectText": "MERGE: union entities",
+        "stepPlaceholder": "MERGE data"
+      },
+      "join": {
+        "selectText": "JOIN: combine values",
+        "stepPlaceholder": "JOIN values"
+      }
+    }
+  },
+  "threatHuntStepResults": {
+    "editStep": "Edit step",
+    "entities": "Entities",
+    "records": "Records",
+    "entityType": "Entity type",
+    "manageSteps": "Manage steps",
+    "nextStep": "Next step",
+    "saveSnapshot": "Save snapshot",
+    "variable": "Variable",
+    "search": "Search...",
+    "overflow": {
+      "edit": "Edit step",
+      "delete": "Delete"
+    },
+    "dataSwitcher": {
+      "label": "Switcher for snapshot steps or variables",
+      "menuLabel": "Choose an item",
+      "menu": {
+        "open": "Open menu",
+        "close": "Close menu"
+      }
+    },
+    "customColumnBtn": "Customize columns"
+  },
+  "threatHuntStepStatus": {
+    "initialized": "Pending",
+    "queued": "Queued",
+    "started": "Started",
+    "finished": "Completed",
+    "failed": "Failed",
+    "unknown": "Unknown"
+  },
+  "threatHuntNotification": {
+    "errorTitle": "Error!",
+    "successTitle": "Success!",
+    "step": {
+      "successSubtitle": "Step {{stepName}} has been submitted successfully."
+    },
+    "hunt": {
+      "successSubtitle": "Hunt {{huntName}} has been updated successfully."
+    }
+  },
+  "kestrelSyntaxError": {
+    "unexpectedToken": "Unexpected token  \"{{token}}\" at line {{line}} position {{column}}, expected {{expectedTokens}}",
+    "unexpectedTokenNone": "Syntax error at line {{line}} position {{column}}, expected {{expectedTokens}}",
+    "unexpectedChar": "Unexpected character \"{{char}}\" at line {{line}} position {{column}}",
+    "syntaxError": "Syntax error"
+  },
+  "threatHuntAPIError": {
+    "1": "Unexpected error. Contact your administrator.",
+    "2": "No valid configuration files can be found. Contact your administrator.",
+    "3": "Unexpected token \"{{token}}\" at line {{line}} col {{column}}",
+    "3NoToken": "Unexpected token at line {{line}} col {{column}}",
+    "4": "Invalid STIX pattern. Rewrite the STIX pattern.",
+    "5": "Variable does not exist. Check the variable used.",
+    "6": "Unsupported relation. Check for supported relations and entity types in the documentation.",
+    "7": "Unsupported STIX syntax. Rewrite the STIX pattern.",
+    "8": "Execution abandoned due to empty variable. Rewrite the statement to use a non-empty variable as input.",
+    "9": "Invalid attribute. Rewrite the statement with a valid attribute.",
+    "10": "Input data does not have \"type\" column'. Add \"type\" column to data or specify entity type in the statement.",
+    "11": "More than one entity type exists in input data. Provide homogeneous entities.",
+    "12": "Failed to connect to the data source. Check URI for typographical errors.",
+    "13": "Unexpected error. Contact your administrator.",
+    "14": "Invalid data source. Check data source configuration.",
+    "15": "Data source internal error. Contact your administrator.",
+    "16": "Data source interface does not exist. Check data source in statement.",
+    "17": "Invalid data source interface implementation. Contact your administrator.",
+    "18": "Conflicting data source interface schemes. Contact your administrator.",
+    "19": "Unexpected error. Contact your administrator.",
+    "20": "Invalid analytics. Contact your administrator.",
+    "21": "Unexpected analytics error. Contact your administrator.",
+    "22": "Analytics interface cannot be found. Check analytics name in the statement.",
+    "23": "Invalid analytics interface implementation. Contact your administrator.",
+    "24": "Conflicting analytics interfaces. Contact your administrator.",
+    "25": "Incorrect analytics configurations. You must provide a valid variable.",
+    "601": "Invalid Hunt ID \"{{msg}}\". You must provide a valid hunt ID.",
+    "602": "Invalid Step Ordinal. You must provide a valid step ordinal.",
+    "603": "Invalid Step ID \"{{msg}}\". You must provide a valid step ID.",
+    "604": "Invalid Analytic Name. You must provide a valid analytic name.",
+    "605": "Variable Not Found. This variable cannot be found.",
+    "606": "Update Conflict. You cannot update a step that is in \"queued\" or \"started\" status.",
+    "607": "Invalid Operation. This is an invalid operation.",
+    "608": "Invalid access to threat hunting service. Contact your administrator.",
+    "609": "Unauthorized User. You are not an authorized user.",
+    "others": "Unexpected error. Contact your administrator."
+  },
+  "dbWarningNotification": {
+    "Title": "Storage in Data Explorer is almost full",
+    "subTitle": "Please contact your administrator for assistance or refer to \"Storage almost full alert\" in Knowledge Center."
+  },
+  "dynamicMenu": {
+    "copy": "Copy \"<1>{{value}}</1>\"",
+    "startQuery": "Start a new query",
+    "addArtifact": "Add artifact to case"
+  },
+  "searchControlFlow": {
+    "clusterBusy": "The cluster is busy processing other requests and does not respond to your queries.",
+    "link": "Learn more",
+    "unavailableDataSources": {
+      "infoWithOneSource": "A data source is currently unavailable and therefore is not used for your search.",
+      "infoWithMultiSources": "Some data sources are currently unavailable and therefore are not used for your search.",
+      "errorOneSource": "Data Explorer cannot connect to a data source.",
+      "errorMultiSources": "{{countSources}} of {{totalSources}} sources are unavailable, please uncheck unavailable source to run a query."
+    }
+  },
+  "payloadTearsheet": {
+    "mainTitle": "Payload reference",
+    "utfTab": "UTF",
+    "hexTab": "HEX",
+    "base64Tab": "Base64"
+  },
+  "customColumnTearsheet": {
+    "mainTitle": "Customize columns",
+    "mainDescription": "Select all columns that you want to display. You can also drag and drop the columns to reposition them.",
+    "primaryBtn": "Apply",
+    "secondaryBtn": "Cancel",
+    "closeBtn": "Close",
+    "selectedColumns": "Selected columns <0>({{columnCount}})</0>",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "moveTop": "Move to top",
+    "moveBottom": "Move to bottom",
+    "sortAsc": "Sort ascending",
+    "sortDesc": "Sort descending",
+    "sortNone": "Unsort",
+    "remove": "Remove",
+    "moreOptions": "More options",
+    "dragIcon": "drag icon",
+    "draggableTooltip": "Drag and drop this item to change its order.",
+    "removeAll": "Remove all",
+    "noColumnTitle": "You have not selected any columns",
+    "noColumnDesc": "From the <0>Available columns</0> list on the left panel, select the checkboxes in front of the columns that you want to include in the <0>Selected columns</0> list.",
+    "searchColumnPlaceholder": "Find columns",
+    "availableColumnsSectionHeader": "Available columns",
+    "emptySearchResultHeader": "No matches for all columns",
+    "emptySearchResultSuggestion": "Please try again with other keywords or narrow your searches",
+    "selectAllColumn": "Select all",
+    "unSelectAllColumn": "Unselect all",
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all",
+    "others": "Others"
+  },
+  "enrichmentsTearsheet": {
+    "heading": "Add an enrichment",
+    "createListLabel": "Available enrichments",
+    "learnMoreKestrel": "Learn more about Kestrel enrichments",
+    "learnMoreScikit": "Learn more about Scikit-learn clustering",
+    "formNotAvailable": {
+      "other": "{{name}} enrichment would be disabled when there is no results in a search.",
+      "tis": "Threat intel enrichment would be disabled when neither of the following observable type is not included: ipv4-addr, ipv6-addr, domain-name, url, network-traffic, or file.",
+      "sps": "Suspicious process scoring enrichment only handles the process observable type and would be disabled when the process observable type is not included."
+    },
+    "form": {
+      "shared" : {
+        "observableDropdown": {
+          "others": "Others",
+          "title": "Observable type",
+          "label": "Choose an observable type",
+          "tooltip": "The STIX 2.0 specification defines structured representations for observable objects and their properties in the cyber domain."
+        },
+        "learnMore": "Learn More about STIX documentation",
+        "valueInputErrorMessage": "Numerical input needed"
+      },
+      "tis" : {
+        "name": "Threat intel enrichment",
+        "description": "Add threat intelligence to STIX Cyber-observable Objects (SCOs) such as ipv4-addr, domain-name, url, and file."
+      },
+      "outlierDetection": {
+        "name": "Outlier detection",
+        "description": "Outlier score is an aggregate value calculated based on source datasets. The score ranges from 0 to 1, where 0 represents most normal and 1 represents most abnormal.",
+        "propertyNames": "Property names",
+        "radioGroup": {
+          "legend": "Choose an outlier detection method",
+          "auto": {
+            "title": "Automatically choose appropriate method (default)"
+          },
+          "zscore": {
+            "title": "zscore",
+            "tooltip": "This method can only use a single numerical attributes as input",
+            "inputLabel": "K"
+          },
+          "isolationforest": {
+            "title": "isolationforest",
+            "tooltip": "Works with any number and type or property",
+            "inputLabel": "Contamination"
+          }
+        }
+      },
+      "suspiciousProcessScoring": {
+        "name": "Suspicious process scoring",
+        "description": "Use numerical scores to rate process objects."
+      },
+      "clustering": {
+        "name": "Clustering",
+        "description": "Run cluster analysis for a set of objects.",
+        "propertyNames": "Property names",
+        "radioGroup": {
+          "legend": "Choose an clustering method",
+          "kmeans": {
+            "title": "kmeans",
+            "tooltip": "Distance between points",
+            "inputLabel": "Number of clusters"
+          },
+          "dbscan": {
+            "title": "dbscan",
+            "tooltip": "Distance between nearest points",
+            "inputLabel": "Neighborhood size"
+          }
+        }
+      }
+    },
+    "notification": {
+      "success": {
+        "title": "Submission successful",
+        "subtitle": "The enrichment job is created successfully."
+      },
+      "error": {
+        "title": "Submission failed",
+        "subtitle": "Failed to create enrichment job. Please try again later."
+      },
+      "warning": {
+        "subtitle": "You can not create a new job when the previous one is still in progress. Please try again later."
+      }
+    }
+  },
+  "enrichments": {
+    "addEnrichment": "Add enrichment",
+    "updateResults": "Update results",
+    "retry": "Retry enrichment",
+    "iconStatus": {
+      "started": "In progress",
+      "complete": "Complete",
+      "failed": "Failed",
+      "queued": "Queued"
+    },
+    "completeToast": {
+      "title": {
+        "success": "Data enrichment succeeded.",
+        "fails": "Data enrichment failed."
+      }
+    }
+  }
+}

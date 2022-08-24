@@ -4,18 +4,6 @@ body {
 
   }
 
-
-.security--header {
-  margin: 0px;
-  margin-left: 20px;
-  font-weight: 400;
-  height: 48px;
-  background-color: inherit;
-  color: inherit;
-  color:#F25257;
-  margin-top: 5px;
-}
-
 label {
   font-size: 1.25rem;
   font-weight: 400;
@@ -27,7 +15,7 @@ label {
   margin-bottom: auto;
   color:#f4f4f4;
 }
-  
+
 input{
   margin:20px;
   margin-top:7px;
@@ -45,6 +33,7 @@ table, th, td {
 }
 
 th{
+  height:105px;
   background-color: #CCD2AD;
 }
 

@@ -1,0 +1,23 @@
+.pageButton{
+    display: inline;
+    width:230px;
+    margin-left:10px;
+    text-align:center;
+     line-height: 50px;
+         border-radius: 25px;
+         border: 2px solid;
+}
+
+.pageButtonIcon{
+    font-size:30px;
+    color:black;
+    background-color:#E3BFA6;
+      vertical-align: middle;
+}
+
+.pageButtonText{
+font-size:20px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

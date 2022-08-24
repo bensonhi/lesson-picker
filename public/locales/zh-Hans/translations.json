@@ -1,0 +1,793 @@
+{
+  "app": {
+    "title": "IBM Data Explorer",
+    "errorPage": "错误页面",
+    "threatHuntPage": "搜寻 (beta)",
+    "searchpageTitle": "Data Explorer - 搜索结果",
+    "permissionTitle": "Data Explorer - 订阅",
+    "exportTitle": "Data Explorer - 导出结果",
+    "threatHuntPageTitle": "Data Explorer - 威胁搜寻结果",
+    "titles": {
+      "search": "搜索结果"
+    },
+    "tabs": {
+      "federatedSearch": "联合搜索",
+      "threatHunt": "威胁搜寻 (beta)",
+      "returnToThreatHunt": "返回到威胁搜寻 (beta)"
+    }
+  },
+  "help": {
+    "general": "什么是 Data Explorer？",
+    "query": "如何构建查询？",
+    "explore": "如何探索我的结果？"
+  },
+  "ui": {
+    "cancel": "取消",
+    "expand": "展开",
+    "collapse": "折叠",
+    "close": "关闭",
+    "loadMore": "装入更多",
+    "loadMoreCount": "再装入 {{value}} 个",
+    "viewingCount": "正在查看 {{value}} 个（共 {{total}} 个）",
+    "backToTop": "滚动返回至顶部",
+    "export": "导出",
+    "on": "上的",
+    "off": "离开",
+    "updateResults": "更新结果",
+    "no": "否",
+    "closeIconDescription": "取消并关闭警告"
+  },
+  "tableQuickSearch": {
+    "label": "快速搜索结果",
+    "placeholder": "快速搜索"
+  },
+  "queryBuilder": {
+    "title": "查询构建器",
+    "tabs": {
+      "stix": "STIX",
+      "aql": "AQL"
+    },
+    "dataSources": {
+      "allSelected": "所有数据源",
+      "selectDataSource": "选择数据源",
+      "dataSources": "数据源",
+      "tooltips": {
+        "closeMenu": "关闭数据源菜单",
+        "openMenu": "打开数据源菜单",
+        "clearAll": "清除所有",
+        "clearSelection": "清除所选项"
+      }
+    },
+    "editor": {
+      "label": "输入查询",
+      "syntaxError": "此查询包含一个语法错误。",
+      "syntaxError_plural": "此查询包含多个语法错误。",
+      "fetchingDataSources": "正在装入数据源。",
+      "placeholders": {
+        "stix": "为 IP、URL、MD5 散列等创建查询",
+        "aql": "使用 AQL 查询所有 QRadar 源"
+      }
+    },
+    "runQuery": "运行查询",
+    "submissionStatus": {
+      "submitting": "正在提交查询。",
+      "submitted": "已成功提交查询。",
+      "error": "提交查询失败。 请重新尝试。"
+    },
+    "stixPattern": {
+      "primitiveTypes": {
+        "IntPosLiteral": "正整数",
+        "IntNegLiteral": "负整数",
+        "FloatPosLiteral": "正浮点数",
+        "FloatNegLiteral": "负浮点数",
+        "StringLiteral": "字符串",
+        "BinaryLiteral": "二进制字符串",
+        "HexLiteral": "十六进制字符串",
+        "TimestampLiteral": "时间戳记字符串",
+        "BoolLiteral": "boolean"
+      },
+      "errors": {
+        "qb_unexpected_expression": "意外的表达式 '{{0}}'，表达式必须后跟运算符或限定符。",
+        "qb_multiple_repeated_qualifiers": "不允许使用多个 REPEATED 限定符。",
+        "qb_multiple_within_qualifiers": "不允许使用多个 WITHIN 限定符。",
+        "qb_multiple_start_stop_qualifiers": "不允许使用多个 START STOP 限定符。",
+        "qb_value_not_allowed_timestamp_required": "此对象路径不允许使用此值类型。 时间戳记字符串是必需的。",
+        "qb_value_not_allowed_value_required": "此对象路径不允许使用此值类型。 $t(queryBuilder.stixPattern.primitiveTypes.{{0}}) 是必需的。",
+        "qb_type_expected_to_complete_expression": "需要 $t(queryBuilder.stixPattern.primitiveTypes.{{0}}) 才能完成此表达式。",
+        "qb_expecting_start_stop": "期望 `START t'' STOP t''`",
+        "qb_unexpected_expression_did_you_mean": "意外的表达式 '{{0}}'。是要改用 '{{1}}' 吗？",
+        "qb_value_expected_to_complete_expression": "完成此表达式需要一个值。",
+        "qb_thl_variable_not_in_var_list": "提供的 Kestrel 变量不在有效变量列表中",
+        "qb_thl_props_after_var_required": "变量后的列名是必需项",
+        "qb_thl_column_not_in_column_list": "提供的 Kestrel 列不在有效列的列表中",
+        "qb_thl_invalid_column_format": "这不是有效的 Kestrel 列名",
+        "qb_fallback": "STIX 2.0 模式错误。"
+      }
+    }
+  },
+  "queryBuilderDialog": {
+    "close": "关闭对话框",
+    "label": "启动查询"
+  },
+  "search": {
+    "noMatchFilters": "没有任何与过滤条件匹配的数据",
+    "noMatchSearch": "没有任何与搜索条件匹配的数据",
+    "placeholder": "请输入查询，然后单击“运行查询”。",
+    "errorMessage": "错误：{{value}}",
+    "errorMessage_plural": "错误 {{index}}：{{value}}",
+    "canNotRunQueryWithoutDataSources": "无法在没有连接数据源的情况下运行查询。"
+  },
+  "artifactDialog": {
+    "title": "向案例添加工件",
+    "ariaLabel": "将工件添加到案例模态",
+    "artifactName": "名称",
+    "artifactNamePlaceholder": "添加此工件的名称",
+    "descriptionLabel": "描述（可选）",
+    "descriptionPlaceholder": "添加此工件的描述。 提交描述后将无法进行编辑。",
+    "primaryButton": "添加工件",
+    "secondaryButton": "取消",
+    "caseSelectionLabel": "案例名称",
+    "selectorPlaceholderLabel": "查找案例或者输入新案例名称",
+    "invalidText": "文本无效",
+    "createNewCase": "创建具有以下名称的新案例：",
+    "loading": "正在装入案例",
+    "submitting": "正在发送请求",
+    "artifactSummary": "工件摘要",
+    "queryDetails": "查询详细信息",
+    "resultDetails": "结果详细信息",
+    "valueDetails": "{{field}} 详细信息",
+    "addedBy": "添加者",
+    "dataSourcesQueried": "已查询的数据源数",
+    "resultsReturned": "已返回结果",
+    "observedCount": "已观察项计数",
+    "indicatorType": "类型值",
+    "indicatorValue": "值",
+    "requiredName": "名称是必需的。",
+    "requiredCaseName": "案例名称是必需的。",
+    "error": "错误。",
+    "errorFetchIncident": "获取案例失败。",
+    "errorCreateIncident": "创建新案例失败。",
+    "errorAddArtifact": "将工件添加到案例失败。",
+    "errorAccountID": "无法获取帐户标识。"
+  },
+  "dateTimeHelper": {
+    "cancel": "取消",
+    "apply": "应用定制范围"
+  },
+  "date": {
+    "label": "日期",
+    "stop": "停止日期",
+    "start": "开始日期",
+    "placeholderFormat": "mm/dd/yyyy",
+    "quickRange": "快速范围",
+    "customRange": "定制范围",
+    "quickRangeMinutes": "过去 {{value}} 分钟",
+    "quickRangeHours": "过去 {{value}} 小时",
+    "quickRangeDays": "过去 {{value}} 天",
+    "pickerError": "范围的开始时间必须在早于范围的结束时间",
+    "useCurrentDateTime": "使用当前日期和时间",
+    "utcStatement": "日期和时间以全球标准时间 (UTC) 表示。"
+  },
+  "time": {
+    "label": "时间",
+    "start": "开始时间",
+    "stop": "停止时间",
+    "picker": {
+      "formLabel": "选择时间",
+      "amLabel": "上午",
+      "hourLabel": "小时",
+      "hourAbbreviation": "hh",
+      "meridiemLabel": "早上/下午",
+      "minuteLabel": "分钟",
+      "minuteAbbreviation": "mm",
+      "pmLabel": "下午",
+      "secondLabel": "秒",
+      "secondAbbreviation": "ss"
+    }
+  },
+  "filter": {
+    "filters": "过滤器",
+    "viewMore": "查看更多",
+    "viewMoreCount": "查看更多内容 ({{hidden}})",
+    "viewLess": "查看更少内容",
+    "noMatch": "没有任何与搜索匹配的过滤器",
+    "find": "查找过滤器...",
+    "showPanel": "显示过滤器",
+    "hidePanel": "隐藏过滤器",
+
+    "selectedViewMore": "+ {{tagCount}} 个",
+    "selectedViewLess": "- 查看更少内容",
+
+    "applyIsFilter": "应用 IS 过滤器",
+    "applyNotFilter": "应用 NOT 过滤器",
+    "removeIsFilter": "移除 IS 过滤器",
+    "removeNotFilter": "移除 NOT 过滤器",
+    "removeFilter": "除去过滤器",
+    "clear": "清除过滤器",
+
+    "selectionOptionsMenu": "过滤器 {{filter}} 的选择选项",
+    "countLabel": "{{items}} 个结果项",
+    "countWithTotalLabel": "{{items}} 个（共 {{totalItems}} 个）结果项",
+
+    "section": {
+      "dataSources": "数据源",
+      "observedData": "已观察数据",
+      "customProperties": "定制属性"
+    }
+  },
+  "errors": {
+    "fallback": "发生错误。 没有其他可用信息。 请联系系统管理员。",
+    "fallbackTitle": "错误",
+    "noUdsConfig": "检索已配置的源失败。 请与系统管理员联系。",
+    "badUdsCallout": "要使用 Data Explorer，需要连接的数据源。",
+    "badUdsCalloutNotAdmin": "要使用 Data Explorer，需要连接的数据源。 请联系您的管理员以获取帮助。",
+    "badUdsLink": "连接数据源",
+    "gettingQueries": "检索查询失败。 请与系统管理员联系。",
+    "noQueries": "找不到查询。",
+    "pageNotFound": "找不到页面",
+    "pageNotFoundMessage": "无法找到此页面。",
+    "request_timeout": "请求超时",
+    "requestTimeoutMessage": "此页面响应时间过长。 请稍后重试。 如果这种情况继续发生，请联系您的管理员。",
+    "returnToPrevious": "返回至前一页",
+    "ana_results_not_available": "查询结果尚不可用。",
+    "ana_unable_to_calculate_metadata": "无法处理结果的元数据。",
+    "aut_no_token_provided": "无法验证用户。  注销您的帐户并重新登录。",
+    "aut_invalid_token": "会话已结束。 注销您的帐户并重新登录。",
+    "aut_no_user_info": "无法找到用户信息。",
+    "cld_connection_error": "$t(errors.service_unavailable)",
+    "cld_search_not_found": "无法找到查询信息。",
+    "cld_unable_to_delete_searches": "无法删除查询。",
+    "cld_unable_to_delete_search": "无法删除查询。",
+    "cld_unable_to_update_search": "无法更新查询。",
+    "de_query_id_not_found": "找不到使用提供的标识的查询。",
+    "de_indexing_failure": "查找建立索引结果时出错。",
+    "de_getting_results_failure": "无法获取结果数据。",
+    "de_no_result_data": "没有任何与搜索条件匹配的数据。",
+    "de_invalid_value": "已输入无效值。",
+    "de_missing_field": "必须填写所有必填字段。",
+    "de_runtime_error": "$t(errors.fallback)",
+    "de_status_code_error": "$t(errors.fallback)",
+    "de_query_quota_exceeded": "已超过此帐户的每月查询配额。 请联系系统管理员。",
+    "ent_not_entitled": "$t(errors.forbidden)",
+    "ent_status_code_error": "无法验证帐户。 请联系系统管理员。",
+    "invalid_parameter": "必须填写所有参数。",
+    "token_verification_failed": "会话已结束。 注销您的帐户并重新登录。",
+    "invalid_permissions": "$t(errors.forbidden)",
+    "service_unavailable_entitlements": "无法验证帐户。 请联系系统管理员。",
+    "invalid_parameter_type": "数据源配置已更改。 重新装入页面。",
+    "invalid_parameter_configuration_id": "$t(errors.invalid_parameter_type",
+    "invalid_stix_pattern": "无法解析 stix。",
+    "invalid_parameter-stix_conversion": "无法将 stix 模式转换为此数据源。",
+    "not_implemented-wrong_parameter": "$t(errors.fallback)",
+    "not_implemented-unsupported": "$t(errors.fallback)",
+    "unknown": "$t(errors.fallback)",
+    "no_datasources": "无法与数据源连接。 请与系统管理员联系",
+    "service_unavailable": "服务当前不可用。 请稍后重试。",
+    "service_unavailable_cloudant": "$t(errors.service_unavailable)",
+    "service_unavailable_configuration": "$t(errors.service_unavailable)",
+    "service_unavailable_secure_gateway": "$t(errors.service_unavailable)",
+    "service_unavailable_openwhisk": "$t(errors.service_unavailable)",
+    "forbidden": "此服务不可用于您的帐户。 请联系系统管理员。",
+    "callback_error": "$t(errors.fallback)",
+    "no_results": "$t(search.noMatchSearch)",
+    "service_unavailable_cos": "$t(errors.forbidden)",
+    "service_unavailable_cos_bucket": "$t(errors.forbidden)",
+    "service_unavailable_cos_url": "$t(errors.forbidden)",
+    "invalid_parameter-queryResults": "$t(errors.fallback)",
+    "service_unavailable-pre_signed_url": "$t(errors.forbidden)",
+    "invalid_parameter-datasourceQueue": "$t(errors.fallback)",
+    "exportBadRequestTitle": "错误的请求",
+    "exportBadRequest": "我们无法为文件生成有效的 URL。",
+    "exportMissingQueryId": "搜索记录不包含查询标识。",
+    "exportUnableToReachService": "无法获取结果。",
+    "exportFallbackError": "导出结果失败。 请关闭此选项卡，然后重试导出文件。"
+  },
+  "queries": {
+    "queryTitle": "查询",
+    "syntaxResults": "{{syntax}} 个结果",
+    "removeQuery": "移除查询",
+    "checkConfigAdmin": "请检查数据源的配置或者在 IBM 支持门户网站中获得支持。",
+    "checkConfig": "请联系管理员以检查配置或者在 IBM 支持门户网站中获取支持。",
+    "configureLink": "配置数据源",
+    "supportLink": "IBM 支持门户网站",
+    "closeFooter": "关闭查询信息面板",
+    "dataSource": "数据源",
+    "dateRange": "时间范围",
+    "duration": "持续时间：",
+    "editQuery": "编辑查询",
+    "expiring": "即将到期",
+    "expired": "已到期",
+    "submitting": "提交",
+    "running": "运行",
+    "partialResults": "部分结果",
+    "noResult": "无结果",
+    "error": "错误",
+    "cancelled": "已取消",
+    "unknown": "未知",
+    "queryStatus": "查询状态",
+    "expiresOn": "到期日期",
+    "expiredOn": "到期日期",
+    "queriedSources": "已查询 {{numerator}} 个（共 {{denominator}} ）源",
+    "failedSources": "{{numerator}} 个（共 {{denominator}} ）源失败",
+    "sources": "数据源：{{names}}",
+    "queued": "正在排队等候",
+    "queryComplete": "查询完成",
+    "rerunQuery": "再次运行查询",
+    "createHunt": "创建搜寻",
+    "requestStatus": "请求状态",
+    "results": "结果",
+    "complete": "完成",
+    "submittingQuery": "正在提交查询",
+    "runningQuery": "正在运行查询",
+    "processingData": "正在处理数据",
+    "timeRange": "时间范围",
+    "viewError": "查看错误",
+    "viewWarning": "查看警告",
+
+    "rerunWarning": {
+      "warning": "警告",
+      "heading": "某些数据源不可用",
+      "description": "此查询的某些数据源不再可用。 创建此查询以来，可能已将这些数据源移除。",
+      "runAnyway": "以任何方式运行查询",
+      "editQuery": "$t(queries.editQuery)"
+    },
+
+    "cancelWarning": {
+      "dialogName": "取消确认对话框",
+      "heading": "是否确定要取消？",
+      "description": "取消此操作将停止搜索，但您的查询和当前结果将存储在卡中。",
+      "cancelSearch": "取消搜索",
+      "successNotificationTitle": "已取消此搜索",
+      "successNotificationSubtitle": "可以在主搜索页面上查看当前搜索结果",
+      "errorNotificationTitle": "未能取消搜索",
+      "errorNotificationSubtitle": "请与管理员联系或稍后尝试",
+      "422NotificationSubtitle": "无法取消此查询，因为它已完成"
+    },
+
+    "removeWarning": {
+      "dialogName": "移除确认对话框",
+      "heading": "确定要移除吗？",
+      "description": "移除您的查询将导致您的查询和搜索结果被删除。",
+      "removeQuery": "移除查询"
+    },
+
+    "completeToast":{
+      "title": "结果完成！"
+    },
+
+    "notification": {
+      "archiveFailed": "无法除去查询。 请重试。",
+      "archiveSuccess": "已成功除去查询。",
+      "undoArchiveSuccess": "已成功恢复查询。",
+      "undoArchiveFailed": "无法恢复查询。 请重试。",
+      "undoArchive": "撤销"
+    },
+
+    "errors": {
+      "invalid_parameter": "数据源无法处理参数。",
+      "invalid_parameter_title": "无效参数",
+      "invalid_query": "提交者查询无效。",
+      "invalid_query_title": "无效查询",
+      "authentication_fail": "您无法联系数据源。",
+      "authentication_fail_title": "认证失败。",
+      "authentication_error": "您无法联系数据源。",
+      "authentication_error_title": "认证错误",
+      "invalid_permissions": "您无法联系数据源。",
+      "invalid_permissions_title": "许可权无效",
+      "service_unavailable": "UDI 服务不可用。",
+      "service_unavailable_title": "服务不可用。",
+      "forbidden": "您无法联系数据源。",
+      "forbidden_title": "已禁止",
+      "no_results": "无来自数据源的结果。",
+      "no_results_title": "没有结果",
+      "mapping_error": "无法执行查询，因为数据源未映射到查询中的指标",
+      "mapping_error_title": "映射错误",
+      "unknown": "查询此数据源时发生未知错误。",
+      "unknown_title": "未知",
+      "fallback": "数据源返回了一个状态错误，没有解释。",
+      "fallback_title": "未解释",
+      "missing": "数据源没有返回任何状态信息。",
+      "missing_title": "缺失"
+    },
+    "dataSourcesDetail": {
+      "questionMark": "?",
+      "resultsAvailable": "可用的结果：",
+      "checkConfigWithoutLink": "请联系管理员以检查配置或者在 &amp;TWBLT;0&gt;{{supportLink}} 中获取支持</0>.",
+      "checkConfigWithLink": "请联系管理员以检查配置或者在 IBM 支持门户网站中获取支持。"
+    }
+  },
+  "cases": {
+    "addToCase": "添加至案例"
+  },
+  "entitlement": {
+    "subscription": {
+      "title": "您需要访问 Data Explorer 来查看此内容。 请联系管理员以授予您相应访问权。",
+      "subTitle": "什么是 Data Explorer？",
+      "description": "从一个统一的界面中搜索并分析您的所有数据。",
+      "link": "了解更多信息"
+    }
+  },
+  "queriesTable": {
+    "title": "已过期的查询",
+    "results": "{{value}} 个结果",
+    "fields": {
+      "runDate": "运行日期",
+      "count": "结果",
+      "q": "查询字符串",
+      "datetimeRange": "时间范围",
+      "dataSources": "数据源"
+    }
+  },
+  "results": {
+    "expand": "展开结果以查看关系",
+    "collapse": "折叠结果以查看简明数据",
+
+    "view": {
+      "switchTable": "切换到表视图",
+      "switchNarrative": "切换到描述视图"
+    },
+
+    "table": {
+      "overflowMenu": "选择操作。"
+    },
+
+    "addToCase": "添加至案例",
+    "fieldsSelector": {
+      "placeholder": "排序依据",
+      "selectProperty": "选择属性"
+    },
+
+    "sort": {
+      "asc": "升序",
+      "desc": "降序",
+      "none": "排序方向"
+    },
+    "exportResults": {
+      "cancel": "取消",
+      "download": "下载",
+      "loadingIndicatorLabel": "主动加载指标",
+      "loadingTitle": "正在导出结果",
+      "loadingDescription": "请使此页面保持打开以自动下载结果。",
+      "cancelledTitle": "已取消",
+      "cancelledDescription": "已取消您的下载。",
+      "readyTitle": "下载",
+      "readyDescription": "您的结果可用",
+      "failedTitle": "失败",
+      "failedDescription": "导出结果失败。"
+    },
+    "codeSnippet": {
+      "copy": "已复制！",
+      "showMore": "显示更多",
+      "showLess": "显示更少",
+      "ariaLabel": "STIX 2.0 代码片段"
+    },
+    "contextMenu": {
+      "copy": "复制“{{value}}”",
+      "startQuery": "启动新查询",
+      "addArtifact": "向案例添加工件"
+    },
+    "chart": {
+      "resultsOverTime": "某一段时间内的结果",
+      "seriesName": "事件计数",
+      "seriesTooltip": "{{seriesName}}: {{count}}",
+      "resultCount": "结果计数",
+      "count": "计数",
+      "lastObserved": "上次观察时间",
+      "dateObserved": "观察的日期",
+      "zoomIn": "放大",
+      "zoomOut": "缩小",
+      "resetZoom": "重置缩放"
+    },
+    "ica": {
+      "results": "结果计数",
+      "resultsComplete": "结果计数（完成搜索）",
+      "resultsCancelled": "结果计数（已取消搜索）"
+    },
+    "stix": {
+      "created_by_ref": "数据源",
+      "last_observed": "上次观察时间"
+    },
+    "viewDetails": "查看详细信息",
+    "resultDetails": "结果详细信息"
+  },
+  "panel": {
+    "close": "关闭面板",
+    "newQuery": "启动新查询",
+    "error": "装入信息时出错"
+  },
+  "notification": {
+    "successMsg": "已成功添加到案例 &amp;TWBLT;1&gt;{{caseName}}</1>",
+    "successUndoMsg": "已从案例 &amp;TWBLT;1&gt;{{caseName}} 中移除</1>",
+    "errorUndoMsg": "撤销工件错误",
+    "undo": "撤销工件"
+  },
+  "atk": {
+    "selectProperty": "选择属性",
+    "statisticsTitle": "统计信息",
+    "analytics": "分析",
+    "metadataNotGeneratedTitle": "分析",
+    "metadataNotGenerated": "分析未能处理您的数据。 请与您的管理员联系。",
+    "errorInstruction": "无法显示分析。 刷新页面或在 IBM 支持门户网站中获取支持。",
+    "ibmSupportPortal": "IBM 支持门户网站 ",
+    "icaErrorTitle1": "功能总数",
+    "icaErrorTitle2": "独特的功能",
+    "loadingText": "正在处理数据...",
+    "total": "总计",
+    "unique": "唯一"
+  },
+  "threatHuntTable": {
+    "name": "名称",
+    "description": "描述",
+    "steps": "步骤",
+    "relatedCase": "相关案例",
+    "createdOn": "创建日期",
+    "lastUpdated": "最近一次更新",
+    "createHuntBtn": "开始搜寻",
+    "overflowMenuTitle": "“威胁搜寻表”溢出菜单",
+    "delete": "删除搜寻",
+    "retrieveError": {
+      "title": "错误",
+      "hunts": {
+        "title": "无法检索搜寻列表",
+        "desc": "检索搜寻时出现问题。"
+      },
+      "contact": "请与您的管理员联系。"
+    }
+  },
+  "threatHuntPage": {
+    "placeholder": {
+      "noHuntId": "未提供任何搜寻标识。",
+      "betaOff": "威胁搜寻功能 (beta) 设置为“关”。"
+    },
+    "description": {
+      "viewLess": "查看更少内容",
+      "viewMore": "查看更多"
+    },
+    "editHuntBtn": "编辑搜寻",
+    "addStepBtn": "添加步骤",
+    "documentation": "查看 Kestrel 威胁搜寻语言文档",
+    "initialStep": {
+      "title": "通过添加步骤来启动搜寻",
+      "desc": "Data Explorer 中的威胁搜寻利用新的开放式源代码 Kestrel 威胁搜寻语言来处理您的所有数据，以查找环境中的异常和潜在威胁。",
+      "getStarted": "通过添加您的第一步，开始搜寻。"
+    },
+    "empty": {
+      "stepTitle": "未创建任何步骤",
+      "stepDesc": "通过添加步骤，继续搜寻。",
+      "variableTitle": "未创建任何变量",
+      "variableDesc": "通过运行步骤来创建变量。",
+      "emptyStepContent": {
+        "title": "未返回结果",
+        "desc": "什么都没有。 编辑此步骤以尝试其他操作。"
+      }
+    },
+    "error": {
+      "errorPage": {
+        "title": "错误"
+      },
+      "retrieve": {
+        "title": "错误",
+        "step": {
+          "title": "无法检索步骤列表",
+          "desc": "检索步骤时出现问题。"
+        },
+        "variable": {
+          "title": "无法检索变量",
+          "desc": "检索变量时出现问题。"
+        },
+        "stepContent": {
+          "title": "无法显示变量或快照",
+          "desc": "检索数据时出现问题。"
+        },
+        "contact": "请与您的管理员联系。"
+      }
+    },
+    "stepTab": "管理步骤",
+    "variableTab": "查看变量（数据）"
+  },
+  "huntDialog": {
+    "requiredName": "名称是必需项，不能超过 {{NAME_MAX_LENGTH}} 个字符。",
+    "requiredDescription": "描述是必需项，不能超过 {{DESC_MAX_LENGTH}} 个字符。",
+    "createPrimaryButton": "开始搜寻",
+    "editPrimaryButton": "更新搜寻",
+    "secondaryButton": "取消",
+    "huntName": "名称",
+    "huntNamePlaceholder": "为您的搜寻创建一个名称",
+    "huntDescription": "描述",
+    "huntDescriptionPlaceholder": "编写此搜寻的描述",
+    "error": "错误。",
+    "createHeading": "创建搜寻",
+    "editHeading": "编辑搜寻",
+    "createLoadingMessage": "正在创建搜寻",
+    "editLoadingMessage": "更正更新搜寻",
+    "stixQuery": "STIX 查询"
+  },
+  "threatHuntStepsTable": {
+    "stepName": "步骤名称",
+    "statement": "Kestrel 语句",
+    "output": "输出",
+    "comment": "评论",
+    "status": "状态",
+    "lastExecuted": "上次执行时间",
+    "editStep": "编辑步骤",
+    "deleteStep": "删除",
+    "overflowMenuTitle": "威胁搜寻步骤表溢出菜单",
+    "snapshot": "快照"
+  },
+  "threatHuntVariableCard": {
+    "entities": "实体",
+    "records": "记录",
+    "objectType": "对象类型",
+    "origin": "来源",
+    "createdOn": "创建日期"
+  },
+  "threatHuntStep": {
+    "title": {
+      "new": "新步骤",
+      "add": "添加步骤",
+      "edit": "编辑步骤"
+    },
+    "subTitle": "构建 Kestrel 语句以探索您的数据。",
+    "run": "运行",
+    "cancel": "取消",
+    "close": "关闭",
+    "command": "选择 Kestrel 语句模板（可选）",
+    "stepName": "创建步骤名称",
+    "statement": "Kestrel 语句",
+    "statementInvalidText": "所需的风扇",
+    "comment": "发表意见（可选）",
+    "commentPlaceholder": "编写关于此步骤的说明",
+    "reviewDocumentation": "查看 Kestrel 文档",
+    "save": "保存而不运行",
+    "resources": "资源",
+    "variables": "变量",
+    "noVariablesTitle": "未创建任何变量",
+    "noVariablesMessage": "将在您运行步骤时填充此资源。",
+    "dataSources": "数据源",
+    "analytics": "分析",
+    "availableColumns": "可用列",
+    "errorTitle": "错误",
+    "errorVariablesSubtitle": "无法获取变量列表",
+    "errorVariablesText": "检索变量时出现问题。",
+    "errorDataSourcesSubtitle": "无法获取数据源",
+    "errorDataSourcesText": "检索数据源时出现问题。",
+    "errorAnalyticsSubtitle": "无法获取分析",
+    "errorAnalyticsText": "检索分析时出现问题。",
+    "errorTryAgain": "请稍后重试。",
+    "formTemplateValue": {
+      "default": {
+        "selectText": "选择模板",
+        "stepPlaceholder": "定制"
+      },
+      "get": {
+        "selectText": "GET：搜索您的数据源",
+        "stepPlaceholder": "GET 数据"
+      },
+      "find": {
+        "selectText": "FIND：查找变量中的相关实体",
+        "stepPlaceholder": "FIND 数据"
+      },
+      "new": {
+        "selectText": "NEW：创建变量",
+        "stepPlaceholder": "NEW 变量"
+      },
+      "apply": {
+        "selectText": "APPLY：对变量应用分析",
+        "stepPlaceholder": "APPLY 分析"
+      },
+      "disp": {
+        "selectText": "DISP：创建快照",
+        "stepPlaceholder": "DISP 变量"
+      },
+      "sort": {
+        "selectText": "SORT：排序列",
+        "stepPlaceholder": "SORT 变量"
+      },
+
+      "group": {
+        "selectText": "GROUP：按列分组数据",
+        "stepPlaceholder": "GROUP 数据"
+      },
+      "copy": {
+        "selectText": "COPY：将数据复制到新变量",
+        "stepPlaceholder": "COPY 数据"
+      },
+      "merge": {
+        "selectText": "MERGE：联合实体",
+        "stepPlaceholder": "MERGE 数据"
+      },
+      "join": {
+        "selectText": "JOIN：组合值",
+        "stepPlaceholder": "JOIN 值"
+      }
+    }
+  },
+  "threatHuntStepResults": {
+    "editStep": "编辑步骤",
+    "entities": "实体",
+    "records": "记录",
+    "entityType": "实体类型",
+    "manageSteps": "管理步骤",
+    "nextStep": "下一步",
+    "saveSnapshot": "保存快照",
+    "variable": "变量",
+    "search": "搜索...",
+    "overflow": {
+      "edit": "编辑步骤",
+      "delete": "删除"
+    },
+    "dataSwitcher": {
+      "label": "快照步骤或变量的切换器",
+      "menuLabel": "选择项",
+      "menu": {
+        "open": "打开菜单",
+        "close": "关闭菜单"
+      }
+    }
+  },
+  "threatHuntStepStatus": {
+    "initialized": "暂挂",
+    "queued": "已加入队列",
+    "started": "已启动",
+    "finished": "已完成",
+    "failed": "失败",
+    "unknown": "未知"
+  },
+  "threatHuntNotification": {
+    "errorTitle": "错误！",
+    "successTitle": "成功！",
+    "step": {
+      "successSubtitle": "已成功提交步骤 {{stepName}}。"
+    },
+    "hunt": {
+      "successSubtitle": "已成功更新搜寻 {{huntName}}。"
+    }
+  },
+  "threatHuntAPIError": {
+    "1": "意外的错误。 请联系您的管理员。",
+    "2": "找不到有效的配置文件。 请联系您的管理员。",
+    "3": "第 {{line}} 行 {{column}} 列出现意外的标记“{{token}}”",
+    "3NoToken": "第 {{line}} 行 {{column}} 列出现意外的标记",
+    "4": "STIX 模式无效。 重写 STIX 模式。",
+    "5": "变量不存在。 检查使用的变量。",
+    "6": "不受支持的关系。 请查看文档中支持的关系和实体类型。",
+    "7": "不受支持的 STIX 语法。 重写 STIX 模式。",
+    "8": "由于空变量而放弃执行。 重写语句以使用非空变量作为输入。",
+    "9": "属性无效。 请重写带有有效属性的语句。",
+    "10": "输入数据没有“type”列。 将“type”列添加到数据，或者在语句中指定实体类型。",
+    "11": "输入数据中存在多个实体类型。 提供同类实体。",
+    "12": "无法连接到数据源。 检查 URI 中是否存在拼写错误。",
+    "13": "意外的错误。 请联系您的管理员。",
+    "14": "数据源无效。 检查数据源配置。",
+    "15": "数据源内部错误。 请联系您的管理员。",
+    "16": "数据源接口不存在。 检查语句中的数据源。",
+    "17": "数据源接口实现无效。 请联系您的管理员。",
+    "18": "存在冲突的数据源接口方案。 请联系您的管理员。",
+    "19": "意外的错误。 请联系您的管理员。",
+    "20": "分析无效。 请联系您的管理员。",
+    "21": "意外的分析错误。 请联系您的管理员。",
+    "22": "找不到分析接口。 检查语句中的分析名称。",
+    "23": "分析接口实现无效。 请联系您的管理员。",
+    "24": "存在冲突的分析接口。 请联系您的管理员。",
+    "25": "分析配置不正确。 必须提供有效的变量。",
+    "601": "搜寻标识“{{msg}}”无效。 必须提供有效的搜寻标识。",
+    "602": "步骤序数无效。 必须提供有效的步骤序数。",
+    "603": "步骤标识“{{msg}}”无效。 必须提供有效的步骤标识。",
+    "604": "分析名称无效。 必须提供有效的分析名称。",
+    "605": "找不到变量。 找不到此变量。",
+    "606": "更新冲突。 无法更新处于“已排队”或“已启动”状态的步骤。",
+    "607": "操作无效。 这是无效操作。",
+    "608": "对威胁搜寻服务的访问权无效。 请联系您的管理员。",
+    "609": "未经授权的用户。 您不是授权用户。",
+    "others": "意外的错误。 请联系您的管理员。"
+  },
+  "dbWarningNotification": {
+    "Title": "Data Explorer 中的存储空间几乎已满",
+    "subTitle": "请联系管理员以获取帮助，或者请参阅 Knowledge Center 中的“存储空间几乎已满警报”。"
+  },
+  "dynamicMenu": {
+    "copy": "复制 \"&amp;TWBLT;1&gt;{{value}}</1>\"",
+    "startQuery": "启动新查询",
+    "addArtifact": "向案例添加工件"
+  }
+}

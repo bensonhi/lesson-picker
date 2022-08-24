@@ -1,5 +1,7 @@
 import React from "react";
-import "./index.css";
+import styles from "./index.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeftLong,faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 
 class LessonTable extends React.Component {
   constructor(props) {
@@ -170,15 +172,26 @@ class LessonTable extends React.Component {
         <input
           type="search"
           onChange={(e) => this.setSearchTerm(e.target.value)}
+          style={{display:'block'}}
         ></input>
-        <button onClick={() => this.setNumPerPage(25)}>25</button>
-        <button onClick={() => this.setNumPerPage(50)}>50</button>
-        <button onClick={() => this.setPageNum(this.state.pageNum + 1)}>
-          next page
+        <div style={{display:'flex'}}>
+
+                <div style={{textAlign:'center',display:'flex',justifyContent:'flex-start',width:100+'%'}}>
+                                        <h2 style={{width:'130px'}}>每頁顯示:</h2>
+        <button className={styles.pageButton} style={{width:75+'px',fontSize:20+'px'}} onClick={() => this.setNumPerPage(25)}>25</button>
+        <button className={styles.pageButton} style={{width:75+'px',fontSize:20+'px'}} onClick={() => this.setNumPerPage(50)}>50</button>
+                </div>
+        <div style={{textAlign:'center',display:'flex',justifyContent:'flex-end',width:1000+'px',height:80+'px'}}>
+
+        <button className={styles.pageButton}  onClick={() => this.setPageNum(this.state.pageNum - 1)}>
+          <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowLeftLong} /> <span className={styles.pageButtonText}>previous page</span>
         </button>
-        <button onClick={() => this.setPageNum(this.state.pageNum - 1)}>
-          previous page
+                <h2 style={{marginLeft:'10px',width:175+'px'}}>目前頁數: {this.state.pageNum} </h2>
+        <button   className={styles.pageButton} onClick={() => this.setPageNum(this.state.pageNum + 1)}>
+                   <span className={styles.pageButtonText}>next page</span>  <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowRightLong} />
         </button>
+        </div>
+        </div>
         <table className="lessonTable">
           <tbody>
             <tr key={"heading"}>{tablehead}</tr>
@@ -186,12 +199,14 @@ class LessonTable extends React.Component {
           </tbody>
         </table>
         <h2>目前頁數: {this.state.pageNum} </h2>
-        <button onClick={() => this.setPageNum(this.state.pageNum + 1)}>
-          next page
+        <div style={{textAlign:'center'}}>
+        <button className={styles.pageButton}  onClick={() => this.setPageNum(this.state.pageNum - 1)}>
+          <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowLeftLong} /> <span className={styles.pageButtonText}>previous page</span>
         </button>
-        <button onClick={() => this.setPageNum(this.state.pageNum - 1)}>
-          previous page
+        <button  className={styles.pageButton} onClick={() => this.setPageNum(this.state.pageNum + 1)}>
+                   <span className={styles.pageButtonText}>next page</span>  <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowRightLong} />
         </button>
+        </div>
       </div>
     );
   }

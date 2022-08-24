@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import styles from "./index.module.css";
 
 class TimeTable extends React.Component {
   constructor(props) {
@@ -84,10 +84,12 @@ class TimeTable extends React.Component {
     });
 
     return (
-      <div className="timeTable">
-        <h2> 目前課表</h2>
-        <input
-          style={{ display: "inline", float: "right" }}
+      <div style={{ textAlign: "center",marginRight:50+'px'}}>
+        <h2 style={{ display: "inline-block"}} > 目前課表</h2>
+        <label htmlFor="file-upload" className={styles.customFileUpload}>
+            上傳課表
+        </label>
+        <input id="file-upload"  className={styles.fileUpload}
           type="file"
           name="file"
           onChange={(e) => this.props.uploadFile(e)}
@@ -98,9 +100,9 @@ class TimeTable extends React.Component {
             {this.getContent()}
           </tbody>
         </table>
-        <div>
+        <div style={{ textAlign: "center"}}>
           <button
-            className="submitButton"
+            className={styles.submitButton}
             onClick={() => {
               this.props.changeAll();
             }}

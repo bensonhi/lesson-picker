@@ -1,6 +1,6 @@
 import React from "react";
-import "./index.css";
 import Cookies from "universal-cookie";
+import styles from "./index.module.css";
 
 const cookies = new Cookies();
 
@@ -92,15 +92,17 @@ class LessonTable extends React.Component {
     return (
       <div>
         <h2>已選課程</h2>
-        <table className="chosenTable">
+        <table>
           <tbody>
             <tr key={"heading"}>{tablehead}</tr>
             {content}
           </tbody>
         </table>
-        <a download="已選課表" href={fileDownloadUrl}>
-          輸出課表
+        <div >
+        <a style={{textDecoration:'none'}} download="已選課表" href={fileDownloadUrl}>
+          <button className={styles.downloader}>輸出課表</button>
         </a>
+        </div>
       </div>
     );
   }

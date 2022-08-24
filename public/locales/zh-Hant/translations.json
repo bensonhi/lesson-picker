@@ -1,0 +1,793 @@
+{
+  "app": {
+    "title": "IBM Data Explorer",
+    "errorPage": "錯誤頁",
+    "threatHuntPage": "搜尋（測試版）",
+    "searchpageTitle": "Data Explorer - 搜尋結果",
+    "permissionTitle": "Data Explorer - 訂閱",
+    "exportTitle": "資料總管 - 匯出結果",
+    "threatHuntPageTitle": "資料總管 - 威脅搜尋結果",
+    "titles": {
+      "search": "搜尋結果"
+    },
+    "tabs": {
+      "federatedSearch": "聯合搜尋",
+      "threatHunt": "威脅搜尋（測試版）",
+      "returnToThreatHunt": "回到威脅搜尋（測試版）"
+    }
+  },
+  "help": {
+    "general": "何謂 Data Explorer？",
+    "query": "如何建置查詢？",
+    "explore": "如何探索我的結果？"
+  },
+  "ui": {
+    "cancel": "取消",
+    "expand": "展開",
+    "collapse": "收合",
+    "close": "關閉",
+    "loadMore": "載入更多",
+    "loadMoreCount": "再載入 {{value}} 個",
+    "viewingCount": "正在檢視 {{value}} / {{total}} 個",
+    "backToTop": "捲動回頂端",
+    "export": "匯出",
+    "on": "開啟",
+    "off": "關閉",
+    "updateResults": "更新結果",
+    "no": "否",
+    "closeIconDescription": "取消並跳出警告"
+  },
+  "tableQuickSearch": {
+    "label": "快速搜尋結果",
+    "placeholder": "快速搜尋"
+  },
+  "queryBuilder": {
+    "title": "查詢建置器",
+    "tabs": {
+      "stix": "STIX",
+      "aql": "AQL"
+    },
+    "dataSources": {
+      "allSelected": "所有資料來源",
+      "selectDataSource": "選取資料來源",
+      "dataSources": "資料來源",
+      "tooltips": {
+        "closeMenu": "關閉資料來源功能表",
+        "openMenu": "開啟資料來源功能表",
+        "clearAll": "全部清除",
+        "clearSelection": "清除選項"
+      }
+    },
+    "editor": {
+      "label": "輸入查詢",
+      "syntaxError": "此查詢包含語法錯誤。",
+      "syntaxError_plural": "此查詢包含語法錯誤。",
+      "fetchingDataSources": "正在載入資料來源。",
+      "placeholders": {
+        "stix": "為 IP、URL、MD5 雜湊等建立查詢",
+        "aql": "使用 AQL 查詢所有 QRadar 來源"
+      }
+    },
+    "runQuery": "執行查詢",
+    "submissionStatus": {
+      "submitting": "正在提交查詢。",
+      "submitted": "已順利提交查詢。",
+      "error": "無法提交查詢。 請重試。"
+    },
+    "stixPattern": {
+      "primitiveTypes": {
+        "IntPosLiteral": "正整數",
+        "IntNegLiteral": "負整數",
+        "FloatPosLiteral": "正浮點數",
+        "FloatNegLiteral": "負浮點數",
+        "StringLiteral": "字串",
+        "BinaryLiteral": "二進位字串",
+        "HexLiteral": "十六進製字串",
+        "TimestampLiteral": "時間戳字串",
+        "BoolLiteral": "布林"
+      },
+      "errors": {
+        "qb_unexpected_expression": "非預期的表示式 '{{0}}'，表示式後面必須接運算子或限定元。",
+        "qb_multiple_repeated_qualifiers": "不容許使用多個 REPEATED 限定元。",
+        "qb_multiple_within_qualifiers": "不容許使用多個 WITHIN 限定元。",
+        "qb_multiple_start_stop_qualifiers": "不容許使用多個 START STOP 限定元。",
+        "qb_value_not_allowed_timestamp_required": "此物件路徑不容許使用此值類型。 需要時間戳記字串。",
+        "qb_value_not_allowed_value_required": "此物件路徑不容許使用此值類型。 需要 $t(queryBuilder.stixPattern.primitiveTypes.{{0}})。",
+        "qb_type_expected_to_complete_expression": "需要 $t(queryBuilder.stixPattern.primitiveTypes.{{0}}) 才能完成此表示式。",
+        "qb_expecting_start_stop": "需要 `START t'' STOP t''`",
+        "qb_unexpected_expression_did_you_mean": "非預期的表示式 '{{0}}'。 您是指 '{{1}}' 嗎？",
+        "qb_value_expected_to_complete_expression": "需要一個值才能完成此表示式。",
+        "qb_thl_variable_not_in_var_list": "提供的 Kestrel 變數不在有效變數的清單中",
+        "qb_thl_props_after_var_required": "需要變數之後的直欄名稱",
+        "qb_thl_column_not_in_column_list": "提供的 Kestrel 直欄不在有效直欄的清單中",
+        "qb_thl_invalid_column_format": "這不是有效的 Kestrel 直欄名稱",
+        "qb_fallback": "STIX 2.0 型樣錯誤。"
+      }
+    }
+  },
+  "queryBuilderDialog": {
+    "close": "關閉對話框",
+    "label": "開始查詢"
+  },
+  "search": {
+    "noMatchFilters": "沒有資料符合過濾準則",
+    "noMatchSearch": "沒有資料符合搜尋準則",
+    "placeholder": "請輸入查詢並按一下執行查詢。",
+    "errorMessage": "錯誤：{{value}}",
+    "errorMessage_plural": "錯誤 {{index}}：{{value}}",
+    "canNotRunQueryWithoutDataSources": "沒有連接的資料來源，無法執行查詢。"
+  },
+  "artifactDialog": {
+    "title": "將構件新增至案例",
+    "ariaLabel": "將構件新增至案例限制模式",
+    "artifactName": "姓名",
+    "artifactNamePlaceholder": "新增此構件的名稱",
+    "descriptionLabel": "說明（選用）",
+    "descriptionPlaceholder": "新增此構件的說明。 說明提交後無法編輯。",
+    "primaryButton": "新增構件",
+    "secondaryButton": "取消",
+    "caseSelectionLabel": "案例名稱",
+    "selectorPlaceholderLabel": "尋找案例或鍵入新的案例名稱",
+    "invalidText": "文字無效",
+    "createNewCase": "建立具有下列名稱的新案例：",
+    "loading": "載入案例",
+    "submitting": "傳送要求",
+    "artifactSummary": "構件摘要",
+    "queryDetails": "查詢詳細資料",
+    "resultDetails": "結果詳細資料",
+    "valueDetails": "{{field}} 詳細資料",
+    "addedBy": "新增者",
+    "dataSourcesQueried": "查詢的資料來源",
+    "resultsReturned": "傳回的結果",
+    "observedCount": "觀察計數",
+    "indicatorType": "類型",
+    "indicatorValue": "值",
+    "requiredName": "需要名稱。",
+    "requiredCaseName": "需要案例名稱。",
+    "error": "錯誤：",
+    "errorFetchIncident": "無法取得案例。",
+    "errorCreateIncident": "無法建立新的案例。",
+    "errorAddArtifact": "無法將構件新增至案例。",
+    "errorAccountID": "無法取得帳戶 ID。"
+  },
+  "dateTimeHelper": {
+    "cancel": "取消",
+    "apply": "套用自訂範圍"
+  },
+  "date": {
+    "label": "日期",
+    "stop": "停止日期",
+    "start": "開始日期",
+    "placeholderFormat": "mm/dd/yyyy",
+    "quickRange": "快速範圍",
+    "customRange": "自訂範圍",
+    "quickRangeMinutes": "前 {{value}} 分鐘",
+    "quickRangeHours": "前 {{value}} 個小時",
+    "quickRangeDays": "前 {{value}} 天",
+    "pickerError": "範圍開始值必須在範圍結束值之前",
+    "useCurrentDateTime": "使用現行日期和時間",
+    "utcStatement": "日期和時間以「世界標準時間 (UTC)」表示。"
+  },
+  "time": {
+    "label": "時間",
+    "start": "開始時間",
+    "stop": "停止時間",
+    "picker": {
+      "formLabel": "選取時間",
+      "amLabel": "上午",
+      "hourLabel": "小時",
+      "hourAbbreviation": "hh",
+      "meridiemLabel": "上午/下午",
+      "minuteLabel": "分鐘",
+      "minuteAbbreviation": "mm",
+      "pmLabel": "下午",
+      "secondLabel": "秒",
+      "secondAbbreviation": "ss"
+    }
+  },
+  "filter": {
+    "filters": "過濾器",
+    "viewMore": "檢視更多",
+    "viewMoreCount": "檢視更多 ({{hidden}})",
+    "viewLess": "檢視更少",
+    "noMatch": "沒有過濾器符合您的搜尋",
+    "find": "尋找過濾器...",
+    "showPanel": "顯示過濾器",
+    "hidePanel": "隱藏過濾器",
+
+    "selectedViewMore": "及 {{tagCount}} 個其他項目",
+    "selectedViewLess": "- 檢視更少",
+
+    "applyIsFilter": "套用 IS 過濾器",
+    "applyNotFilter": "套用 NOT 過濾器",
+    "removeIsFilter": "移除 IS 過濾器",
+    "removeNotFilter": "移除 NOT 過濾器",
+    "removeFilter": "移除過濾器",
+    "clear": "清除過濾器",
+
+    "selectionOptionsMenu": "過濾器 {{filter}} 的選擇項目",
+    "countLabel": "{{items}} 個結果項目",
+    "countWithTotalLabel": "{{items}} / {{totalItems}} 個結果項目",
+
+    "section": {
+      "dataSources": "資料來源",
+      "observedData": "觀察資料",
+      "customProperties": "自訂內容"
+    }
+  },
+  "errors": {
+    "fallback": "發生錯誤。 沒有其他可用的資訊。 請聯絡您的系統管理者。",
+    "fallbackTitle": "錯誤",
+    "noUdsConfig": "無法擷取配置的來源。 請與系統管理者聯絡。",
+    "badUdsCallout": "若要使用「資料總管」，需要連接的資料來源。",
+    "badUdsCalloutNotAdmin": "若要使用「資料總管」，需要連接的資料來源。 請與管理者聯絡以取得協助。",
+    "badUdsLink": "連接資料來源",
+    "gettingQueries": "無法擷取查詢。 請與系統管理者聯絡。",
+    "noQueries": "找不到查詢。",
+    "pageNotFound": "找不到頁面",
+    "pageNotFoundMessage": "找不到此頁面。",
+    "request_timeout": "要求逾時值",
+    "requestTimeoutMessage": "頁面回應時間過長。 請稍後重試。 如果這種情況繼續發生，請聯絡您的管理者。",
+    "returnToPrevious": "回到上一頁",
+    "ana_results_not_available": "查詢結果尚無法使用。",
+    "ana_unable_to_calculate_metadata": "無法處理結果的 meta 資料。",
+    "aut_no_token_provided": "無法驗證使用者。  請登出您的帳戶並重新登入。",
+    "aut_invalid_token": "您的階段作業已結束。 請登出您的帳戶並重新登入。",
+    "aut_no_user_info": "找不到使用者資訊。",
+    "cld_connection_error": "$t(errors.service_unavailable)",
+    "cld_search_not_found": "找不到查詢資訊。",
+    "cld_unable_to_delete_searches": "無法刪除查詢。",
+    "cld_unable_to_delete_search": "無法刪除查詢。",
+    "cld_unable_to_update_search": "無法更新查詢。",
+    "de_query_id_not_found": "找不到使用所提供 ID 的查詢。",
+    "de_indexing_failure": "檢索結果時發生錯誤。",
+    "de_getting_results_failure": "無法取得結果資料。",
+    "de_no_result_data": "沒有資料符合搜尋準則。",
+    "de_invalid_value": "您輸入了無效的值。",
+    "de_missing_field": "必須填寫所有必填欄位。",
+    "de_runtime_error": "$t(errors.fallback)",
+    "de_status_code_error": "$t(errors.fallback)",
+    "de_query_quota_exceeded": "已超出此帳戶的每月查詢配額。 請聯絡您的系統管理者。",
+    "ent_not_entitled": "$t(errors.forbidden)",
+    "ent_status_code_error": "無法驗證您的帳戶。 請聯絡您的系統管理者。",
+    "invalid_parameter": "必須完成所有參數。",
+    "token_verification_failed": "您的階段作業已結束。 請登出您的帳戶並重新登入。",
+    "invalid_permissions": "$t(errors.forbidden)",
+    "service_unavailable_entitlements": "無法驗證您的帳戶。 請聯絡您的系統管理者。",
+    "invalid_parameter_type": "資料來源配置已變更。 請重新載入頁面。",
+    "invalid_parameter_configuration_id": "$t(errors.invalid_parameter_type",
+    "invalid_stix_pattern": "無法剖析 stix。",
+    "invalid_parameter-stix_conversion": "stix 型樣無法轉換為此資料來源。",
+    "not_implemented-wrong_parameter": "$t(errors.fallback)",
+    "not_implemented-unsupported": "$t(errors.fallback)",
+    "unknown": "$t(errors.fallback)",
+    "no_datasources": "無法與資料來源連接。 請與系統管理者聯絡。",
+    "service_unavailable": "服務目前無法使用。 請稍後再試。",
+    "service_unavailable_cloudant": "$t(errors.service_unavailable)",
+    "service_unavailable_configuration": "$t(errors.service_unavailable)",
+    "service_unavailable_secure_gateway": "$t(errors.service_unavailable)",
+    "service_unavailable_openwhisk": "$t(errors.service_unavailable)",
+    "forbidden": "此服務無法用於您的帳戶。 請聯絡您的系統管理者。",
+    "callback_error": "$t(errors.fallback)",
+    "no_results": "$t(search.noMatchSearch)",
+    "service_unavailable_cos": "$t(errors.forbidden)",
+    "service_unavailable_cos_bucket": "$t(errors.forbidden)",
+    "service_unavailable_cos_url": "$t(errors.forbidden)",
+    "invalid_parameter-queryResults": "$t(errors.fallback)",
+    "service_unavailable-pre_signed_url": "$t(errors.forbidden)",
+    "invalid_parameter-datasourceQueue": "$t(errors.fallback)",
+    "exportBadRequestTitle": "不當的要求",
+    "exportBadRequest": "我們無法為您的檔案產生有效的 URL。",
+    "exportMissingQueryId": "搜尋記錄不包含查詢 ID。",
+    "exportUnableToReachService": "無法取得結果。",
+    "exportFallbackError": "無法匯出結果。 請關閉此標籤，然後嘗試重新匯出檔案。"
+  },
+  "queries": {
+    "queryTitle": "查詢",
+    "syntaxResults": "{{syntax}} 個結果",
+    "removeQuery": "移除查詢",
+    "checkConfigAdmin": "檢查資料來源的配置或在「IBM 支援中心入口網站」中取得支援。",
+    "checkConfig": "與您的管理者聯絡，以在 IBM 支援中心入口網站內檢查配置或取得支援。",
+    "configureLink": "配置資料來源",
+    "supportLink": "IBM 支援中心入口網站",
+    "closeFooter": "關閉查詢資訊畫面",
+    "dataSource": "資料來源",
+    "dateRange": "時間範圍",
+    "duration": "持續時間：",
+    "editQuery": "編輯查詢",
+    "expiring": "即將到期",
+    "expired": "已過期",
+    "submitting": "正在提交",
+    "running": "執行中",
+    "partialResults": "部分結果",
+    "noResult": "沒有任何結果",
+    "error": "錯誤",
+    "cancelled": "已取消",
+    "unknown": "不明",
+    "queryStatus": "查詢狀態",
+    "expiresOn": "到期日期",
+    "expiredOn": "過期日期",
+    "queriedSources": "已查詢 {{numerator}}/{{denominator}} 個來源",
+    "failedSources": "{{numerator}}/{{denominator}} 個來源失敗",
+    "sources": "資料來源：{{names}}",
+    "queued": "在佇列中等待",
+    "queryComplete": "查詢已完成",
+    "rerunQuery": "再次執行查詢",
+    "createHunt": "建立搜尋",
+    "requestStatus": "要求狀態",
+    "results": "結果",
+    "complete": "完成",
+    "submittingQuery": "正在提交查詢",
+    "runningQuery": "正在執行查詢",
+    "processingData": "正在處理資料",
+    "timeRange": "時間範圍",
+    "viewError": "檢視錯誤",
+    "viewWarning": "檢視警告",
+
+    "rerunWarning": {
+      "warning": "警告",
+      "heading": "部分資料來源無法使用",
+      "description": "此查詢的部分資料來源不再可用。 自從建立此查詢以後，它們可能已遭移除。",
+      "runAnyway": "仍然要執行查詢",
+      "editQuery": "$t(queries.editQuery)"
+    },
+
+    "cancelWarning": {
+      "dialogName": "取消確認對話框",
+      "heading": "您確定要取消嗎？",
+      "description": "取消作業會停止搜尋，但您的查詢及現行結果將儲存在卡片中。",
+      "cancelSearch": "取消搜尋",
+      "successNotificationTitle": "此搜尋已取消",
+      "successNotificationSubtitle": "可以在主要搜尋頁面上檢視現行搜尋結果",
+      "errorNotificationTitle": "無法取消搜尋",
+      "errorNotificationSubtitle": "請聯絡您的管理者，或稍後再試一次",
+      "422NotificationSubtitle": "您無法取消此查詢，因為它已完成"
+    },
+
+    "removeWarning": {
+      "dialogName": "移除確認對話框",
+      "heading": "您確定要移除嗎？",
+      "description": "移除您的查詢會導致您的查詢及搜尋結果被刪除。",
+      "removeQuery": "移除查詢"
+    },
+
+    "completeToast":{
+      "title": "結果完成！"
+    },
+
+    "notification": {
+      "archiveFailed": "無法移除查詢。 再試一次。",
+      "archiveSuccess": "已順利移除查詢。",
+      "undoArchiveSuccess": "查詢已順利還原。",
+      "undoArchiveFailed": "無法還原查詢。 再試一次。",
+      "undoArchive": "復原"
+    },
+
+    "errors": {
+      "invalid_parameter": "資料來源無法處理參數。",
+      "invalid_parameter_title": "參數無效",
+      "invalid_query": "提交者查詢無效。",
+      "invalid_query_title": "查詢無效",
+      "authentication_fail": "您無法與資料來源聯絡。",
+      "authentication_fail_title": "鑑別失敗",
+      "authentication_error": "您無法與資料來源聯絡。",
+      "authentication_error_title": "鑑別錯誤",
+      "invalid_permissions": "您無法與資料來源聯絡。",
+      "invalid_permissions_title": "權限無效",
+      "service_unavailable": "UDI 服務不可用。",
+      "service_unavailable_title": "服務無法使用",
+      "forbidden": "您無法與資料來源聯絡。",
+      "forbidden_title": "Forbidden",
+      "no_results": "沒有來自資料來源的結果。",
+      "no_results_title": "沒有任何結果",
+      "mapping_error": "無法執行查詢，因為資料來源未對映到查詢中的指標",
+      "mapping_error_title": "對映錯誤",
+      "unknown": "查詢此資料來源時發生不明錯誤。",
+      "unknown_title": "不明",
+      "fallback": "資料來源傳回了狀態錯誤，但沒有解釋。",
+      "fallback_title": "無法解釋",
+      "missing": "資料來源沒有傳回任何狀態資訊。",
+      "missing_title": "遺漏"
+    },
+    "dataSourcesDetail": {
+      "questionMark": "?",
+      "resultsAvailable": "可用的結果：",
+      "checkConfigWithoutLink": "請聯絡您的管理者，以在 &amp;TWBLT;0&gt;{{supportLink}} 內檢查配置或取得支援</0>.",
+      "checkConfigWithLink": "與您的管理者聯絡，以在 IBM 支援中心入口網站內檢查配置或取得支援。"
+    }
+  },
+  "cases": {
+    "addToCase": "新增至案例"
+  },
+  "entitlement": {
+    "subscription": {
+      "title": "您需要存取「資料總管」才能檢視此內容。 請聯絡管理者來授與您存取權。",
+      "subTitle": "何謂 Data Explorer？",
+      "description": "從一個統一介面搜尋所有資料並進行分析。",
+      "link": "進一步瞭解"
+    }
+  },
+  "queriesTable": {
+    "title": "過期的查詢",
+    "results": "{{value}} 個結果",
+    "fields": {
+      "runDate": "執行日期",
+      "count": "結果",
+      "q": "查詢字串",
+      "datetimeRange": "時間範圍",
+      "dataSources": "資料來源"
+    }
+  },
+  "results": {
+    "expand": "展開結果以檢視關係",
+    "collapse": "收合結果以檢視簡要資料",
+
+    "view": {
+      "switchTable": "切換至表格視圖",
+      "switchNarrative": "切換至敘述視圖"
+    },
+
+    "table": {
+      "overflowMenu": "選取動作。"
+    },
+
+    "addToCase": "新增至案例",
+    "fieldsSelector": {
+      "placeholder": "排序方式",
+      "selectProperty": "選取內容"
+    },
+
+    "sort": {
+      "asc": "遞增",
+      "desc": "遞減",
+      "none": "排序方向"
+    },
+    "exportResults": {
+      "cancel": "取消",
+      "download": "下載",
+      "loadingIndicatorLabel": "主動載入指標",
+      "loadingTitle": "正在匯出結果",
+      "loadingDescription": "請保留此頁面開啟以自動下載結果。",
+      "cancelledTitle": "已取消",
+      "cancelledDescription": "您的下載已取消。",
+      "readyTitle": "下載",
+      "readyDescription": "您的結果可以使用",
+      "failedTitle": "失敗",
+      "failedDescription": "無法匯出結果。"
+    },
+    "codeSnippet": {
+      "copy": "已複製！",
+      "showMore": "顯示更多",
+      "showLess": "顯示更少",
+      "ariaLabel": "STIX 2.0 程式碼 Snippet"
+    },
+    "contextMenu": {
+      "copy": "複製 \"{{value}}\"",
+      "startQuery": "啟動新的查詢",
+      "addArtifact": "將構件新增至案例"
+    },
+    "chart": {
+      "resultsOverTime": "一段時間內的結果",
+      "seriesName": "事件計數",
+      "seriesTooltip": "{{seriesName}}: {{count}}",
+      "resultCount": "結果計數",
+      "count": "計數",
+      "lastObserved": "前次觀察時間",
+      "dateObserved": "觀察日期",
+      "zoomIn": "放大",
+      "zoomOut": "縮小",
+      "resetZoom": "重設縮放"
+    },
+    "ica": {
+      "results": "結果計數",
+      "resultsComplete": "結果計數（已完成搜尋）",
+      "resultsCancelled": "結果計數（已取消搜尋）"
+    },
+    "stix": {
+      "created_by_ref": "資料來源",
+      "last_observed": "前次觀察時間"
+    },
+    "viewDetails": "檢視詳細資料",
+    "resultDetails": "結果詳細資料"
+  },
+  "panel": {
+    "close": "結束畫面",
+    "newQuery": "啟動新的查詢",
+    "error": "載入資訊時發生錯誤"
+  },
+  "notification": {
+    "successMsg": "已順利新增至案例 &amp;TWBLT;1&gt;{{caseName}}</1>",
+    "successUndoMsg": "已從案例 &amp;TWBLT;1&gt;{{caseName}} 中移除</1>",
+    "errorUndoMsg": "復原構件錯誤",
+    "undo": "復原構件"
+  },
+  "atk": {
+    "selectProperty": "選取內容",
+    "statisticsTitle": "統計資料",
+    "analytics": "分析",
+    "metadataNotGeneratedTitle": "分析",
+    "metadataNotGenerated": "分析無法處理您的資料。 請與您的管理者聯絡。",
+    "errorInstruction": "無法顯示分析。 請重新整理頁面或在「IBM 支援中心入口網站」中取得支援。",
+    "ibmSupportPortal": "IBM 支援中心入口網站 ",
+    "icaErrorTitle1": "特性總計",
+    "icaErrorTitle2": "不同的特性",
+    "loadingText": "正在處理資料...",
+    "total": "總計",
+    "unique": "唯一"
+  },
+  "threatHuntTable": {
+    "name": "姓名",
+    "description": "說明",
+    "steps": "步驟",
+    "relatedCase": "相關案例",
+    "createdOn": "建立於",
+    "lastUpdated": "前次更新日期",
+    "createHuntBtn": "開始搜尋",
+    "overflowMenuTitle": "威脅搜尋表格溢位功能表",
+    "delete": "刪除搜尋",
+    "retrieveError": {
+      "title": "錯誤",
+      "hunts": {
+        "title": "無法擷取搜尋清單",
+        "desc": "擷取搜尋時發生問題。"
+      },
+      "contact": "請與您的管理者聯絡。"
+    }
+  },
+  "threatHuntPage": {
+    "placeholder": {
+      "noHuntId": "未提供搜尋 ID。",
+      "betaOff": "威脅搜尋特性（測試版）已設為關閉。"
+    },
+    "description": {
+      "viewLess": "檢視更少",
+      "viewMore": "檢視更多"
+    },
+    "editHuntBtn": "編輯搜尋",
+    "addStepBtn": "新增步驟",
+    "documentation": "檢閱 Kestrel Threat Hunting Language 文件",
+    "initialStep": {
+      "title": "新增步驟以開始搜尋",
+      "desc": "在「資料總管」中進行威脅搜尋利用新的開放程式碼 Kestrel 威脅追蹤語言來處理您的所有資料，以在您的環境中尋找異常及潛在威脅。",
+      "getStarted": "透過新增第一個步驟來開始搜尋。"
+    },
+    "empty": {
+      "stepTitle": "未建立步驟",
+      "stepDesc": "新增步驟以繼續搜尋。",
+      "variableTitle": "未建立變數",
+      "variableDesc": "透過執行步驟來建立變數。",
+      "emptyStepContent": {
+        "title": "不傳回結果",
+        "desc": "什麼都沒有。 編輯此步驟，以嘗試其他方法。"
+      }
+    },
+    "error": {
+      "errorPage": {
+        "title": "錯誤"
+      },
+      "retrieve": {
+        "title": "錯誤",
+        "step": {
+          "title": "無法擷取步驟清單",
+          "desc": "擷取步驟時發生問題。"
+        },
+        "variable": {
+          "title": "無法擷取變數",
+          "desc": "擷取變數時發生問題。"
+        },
+        "stepContent": {
+          "title": "無法顯示變數或 Snapshot",
+          "desc": "擷取資料時發生問題。"
+        },
+        "contact": "請與您的管理者聯絡。"
+      }
+    },
+    "stepTab": "管理步驟",
+    "variableTab": "檢視變數（資料）"
+  },
+  "huntDialog": {
+    "requiredName": "名稱是必要的，但不能超過 {{NAME_MAX_LENGTH}} 個字元。",
+    "requiredDescription": "說明是必要的，但不能超過 {{DESC_MAX_LENGTH}} 個字元。",
+    "createPrimaryButton": "開始搜尋",
+    "editPrimaryButton": "更新搜尋",
+    "secondaryButton": "取消",
+    "huntName": "姓名",
+    "huntNamePlaceholder": "建立搜尋的名稱",
+    "huntDescription": "說明",
+    "huntDescriptionPlaceholder": "撰寫此搜尋的說明",
+    "error": "錯誤：",
+    "createHeading": "建立搜尋",
+    "editHeading": "編輯搜尋",
+    "createLoadingMessage": "正在建立搜尋",
+    "editLoadingMessage": "正在更新搜尋",
+    "stixQuery": "STIX 查詢"
+  },
+  "threatHuntStepsTable": {
+    "stepName": "步驟名稱",
+    "statement": "Kestrel 陳述式",
+    "output": "輸出",
+    "comment": "評論",
+    "status": "狀態",
+    "lastExecuted": "前次執行",
+    "editStep": "編輯步驟",
+    "deleteStep": "刪除",
+    "overflowMenuTitle": "威脅搜尋步驟表格溢位功能表",
+    "snapshot": "Snapshot"
+  },
+  "threatHuntVariableCard": {
+    "entities": "實體",
+    "records": "記錄",
+    "objectType": "物件類型",
+    "origin": "原始",
+    "createdOn": "建立於"
+  },
+  "threatHuntStep": {
+    "title": {
+      "new": "新建步驟",
+      "add": "新增步驟",
+      "edit": "編輯步驟"
+    },
+    "subTitle": "建置 Kestrel 陳述式以探索您的資料。",
+    "run": "執行",
+    "cancel": "取消",
+    "close": "關閉",
+    "command": "選取 Kestrel 陳述式範本（選用）",
+    "stepName": "建立步驟名稱",
+    "statement": "Kestrel 陳述式",
+    "statementInvalidText": "必要的",
+    "comment": "留下評論（選用）",
+    "commentPlaceholder": "撰寫關於此步驟的附註",
+    "reviewDocumentation": "檢閱 Kestrel 說明文件",
+    "save": "儲存而不執行",
+    "resources": "資源",
+    "variables": "變數",
+    "noVariablesTitle": "未建立變數",
+    "noVariablesMessage": "將在您執行步驟時移入此資源。",
+    "dataSources": "資料來源",
+    "analytics": "分析",
+    "availableColumns": "可用的直欄",
+    "errorTitle": "錯誤",
+    "errorVariablesSubtitle": "無法取得變數清單",
+    "errorVariablesText": "擷取變數時發生問題。",
+    "errorDataSourcesSubtitle": "無法取得資料來源",
+    "errorDataSourcesText": "擷取資料來源時發生問題。",
+    "errorAnalyticsSubtitle": "無法取得分析",
+    "errorAnalyticsText": "擷取分析時發生問題。",
+    "errorTryAgain": "請稍後重試。",
+    "formTemplateValue": {
+      "default": {
+        "selectText": "選取範本",
+        "stepPlaceholder": "自訂"
+      },
+      "get": {
+        "selectText": "GET：搜尋您的資料來源",
+        "stepPlaceholder": "GET 資料"
+      },
+      "find": {
+        "selectText": "FIND：在變數內尋找相關的實體",
+        "stepPlaceholder": "FIND 資料"
+      },
+      "new": {
+        "selectText": "新建：建立變數",
+        "stepPlaceholder": "新建變數"
+      },
+      "apply": {
+        "selectText": "APPLY：將分析套用在變數上",
+        "stepPlaceholder": "APPLY 分析"
+      },
+      "disp": {
+        "selectText": "DISP：建立 Snapshot",
+        "stepPlaceholder": "DISP 變數"
+      },
+      "sort": {
+        "selectText": "SORT：排序直欄",
+        "stepPlaceholder": "SORT 變數"
+      },
+
+      "group": {
+        "selectText": "GROUP：依直欄分組資料",
+        "stepPlaceholder": "GROUP 資料"
+      },
+      "copy": {
+        "selectText": "COPY：將資料複製到新變數",
+        "stepPlaceholder": "COPY 資料"
+      },
+      "merge": {
+        "selectText": "MERGE：聯合實體",
+        "stepPlaceholder": "MERGE 資料"
+      },
+      "join": {
+        "selectText": "JOIN：結合值",
+        "stepPlaceholder": "JOIN 值"
+      }
+    }
+  },
+  "threatHuntStepResults": {
+    "editStep": "編輯步驟",
+    "entities": "實體",
+    "records": "記錄",
+    "entityType": "實體類型",
+    "manageSteps": "管理步驟",
+    "nextStep": "下一步",
+    "saveSnapshot": "儲存 Snapshot",
+    "variable": "可變的",
+    "search": "搜尋...",
+    "overflow": {
+      "edit": "編輯步驟",
+      "delete": "刪除"
+    },
+    "dataSwitcher": {
+      "label": "Snapshot 步驟或變數的切換器",
+      "menuLabel": "選擇項目",
+      "menu": {
+        "open": "開啟功能表",
+        "close": "關閉功能表"
+      }
+    }
+  },
+  "threatHuntStepStatus": {
+    "initialized": "擱置",
+    "queued": "佇列",
+    "started": "已啟動",
+    "finished": "已完成",
+    "failed": "失敗",
+    "unknown": "不明"
+  },
+  "threatHuntNotification": {
+    "errorTitle": "錯誤！",
+    "successTitle": "成功！",
+    "step": {
+      "successSubtitle": "已順利提交步驟 {{stepName}}。"
+    },
+    "hunt": {
+      "successSubtitle": "已順利更新搜尋 {{huntName}}。"
+    }
+  },
+  "threatHuntAPIError": {
+    "1": "異常錯誤。 請洽詢管理者。",
+    "2": "找不到有效的配置檔。 請洽詢管理者。",
+    "3": "行 {{line}} 欄 {{column}} 的記號 \"{{token}}\" 不符合預期",
+    "3NoToken": "行 {{line}} 欄 {{column}} 的記號不符合預期",
+    "4": "STIX 型樣無效。 重寫 STIX 型樣。",
+    "5": "變數不存在。 請檢查所使用的變數。",
+    "6": "不支援關係。 請在說明文件中檢查支援的關係和實體類型。",
+    "7": "不支援的 STIX 語法。 重寫 STIX 型樣。",
+    "8": "因為空變數而放棄執行。 請重寫陳述式，以使用非空的變數作為輸入。",
+    "9": "屬性無效。 請以有效的屬性重寫陳述式。",
+    "10": "輸入資料不具有「類型」直欄。 將「類型」直欄新增至資料，或在陳述式中指定實體類型。",
+    "11": "輸入資料中已存在多個實體類型。 提供同質實體。",
+    "12": "無法連接至資料來源。 請檢查 URI 是否有印刷錯誤。",
+    "13": "異常錯誤。 請洽詢管理者。",
+    "14": "資料來源無效。 請檢查資料來源配置。",
+    "15": "資料來源內部錯誤。 請洽詢管理者。",
+    "16": "資料來源介面不存在。 請檢查陳述式中的資料來源。",
+    "17": "資料來源介面實作無效。 請洽詢管理者。",
+    "18": "衝突的資料來源介面架構。 請洽詢管理者。",
+    "19": "異常錯誤。 請洽詢管理者。",
+    "20": "分析無效。 請洽詢管理者。",
+    "21": "非預期的分析錯誤。 請洽詢管理者。",
+    "22": "找不到分析介面。 請檢查陳述式中的分析名稱。",
+    "23": "分析介面實作無效。 請洽詢管理者。",
+    "24": "衝突的分析介面。 請洽詢管理者。",
+    "25": "分析配置不正確。 您必須提供有效的變數。",
+    "601": "搜尋 ID \"{{msg}}\" 無效。 您必須提供有效的搜尋 ID。",
+    "602": "步驟序數無效。 您必須提供有效的步驟序數。",
+    "603": "步驟 ID \"{{msg}}\" 無效。 您必須提供有效的步驟 ID。",
+    "604": "分析名稱無效。 您必須提供有效的分析名稱。",
+    "605": "找不到變數。 找不到此變數。",
+    "606": "更新衝突。 您無法更新處於「已排入佇列」或「已啟動」狀態中的步驟。",
+    "607": "無效作業。 這是無效的作業。",
+    "608": "存取威脅搜尋服務的權限無效。 請洽詢管理者。",
+    "609": "使用者未獲授權。 您不是授權使用者。",
+    "others": "異常錯誤。 請洽詢管理者。"
+  },
+  "dbWarningNotification": {
+    "Title": "「資料總管」中的儲存體幾乎已滿",
+    "subTitle": "請聯絡管理者以取得協助，或參閱 Knowledge Center 中的「儲存體器幾乎已滿警示」。"
+  },
+  "dynamicMenu": {
+    "copy": "副本 \"&amp;TWBLT;1&gt;{{value}}</1>\"",
+    "startQuery": "啟動新的查詢",
+    "addArtifact": "將構件新增至案例"
+  }
+}

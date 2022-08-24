@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import TimeTable from "./TimeTable/index.js";
 import LessonTable from "./LessonTable/index.js";
 import ChosenTable from "./chosenTable/index.js";
 import Cookies from "universal-cookie";
+import styles from "./index.module.css";
 
 const cookies = new Cookies();
 
@@ -159,7 +159,7 @@ class SubmitForm extends React.Component {
     return (
       <div>
         <div className="flex1">
-          <h1 className="security--header">Lesson Picker for NTUT</h1>
+          <h1 className={styles.security_header}>北科大選課規劃工具 Lesson Picker for NTUT</h1>
         </div>
         <div className="flex2">
           <TimeTable
@@ -193,4 +193,4 @@ class SubmitForm extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<SubmitForm />, document.getElementById("root"));
+export default SubmitForm;
