@@ -1,104 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
 import styles from "./index.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong,faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 
-    function search(item, term) {
-      for (let i = 0; i < item.length; i++) {
-        if (item[i].text.includes(term)) return true;
-      }
-      return false;
-    }
-
-let content=[];
-let length=0;
-
-
-class LessonTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      NumPerPage: 50,
-      pageNum: 1,
-      searchTerm: "",
-    };
-    this.setNumPerPage = this.setNumPerPage.bind(this);
-    this.setPageNum = this.setPageNum.bind(this);
+function search(item, term) {
+  for (let i = 0; i < item.length; i++) {
+    if (item[i].text.includes(term)) return true;
   }
-  componentDidUpdate() {
-      let NumPerPage = this.state.NumPerPage;
-          let pageNum = this.state.pageNum;
-    const require = this.props.require;
-    length=0;
-    const data = this.props.data;
-    let searchTerm = this.state.searchTerm;
-    content=data.reduce((acc,item, index) => {
-      if (item["課"].length == 0) {
-        return acc;
-      }
-      for (let i in item["課"]) {
-        if (require[item["課"][i]] != 0) {
-          return acc;
-        }
-      }
-      if (searchTerm !== "") {
-        if (
-          !item["課號"].includes(searchTerm) &&
-          !search(item["課程名稱"], searchTerm) &&
-          !search(item["班級"], searchTerm) &&
-          !search(item["教師"], searchTerm)
-        )
-          return acc;
-      }
-      length++;
-      if (length > NumPerPage * pageNum) return acc;
-      if (length < NumPerPage * (pageNum - 1)) return acc;
-      return [...acc,item];
-    },[]);
-  }
+  return false;
+}
 
-  setNumPerPage(num) {
-    this.setState({ NumPerPage: num });
-  }
-  setPageNum(num) {
-    let maxNum = length / this.state.NumPerPage;
-    if (num >= 1 && num < maxNum + 1) this.setState({ pageNum: num });
-  }
-
-  setSearchTerm = (term) => {
-    const self = this;
-    let typingTimeout = 1;
-    if (self.state.typingTimeout) {
-      clearTimeout(self.state.typingTimeout);
-    }
-    self.setState({
-      typingTimeout: setTimeout(function () {
-        self.setState({ searchTerm: term });
-        self.setPageNum(1);
-                self.setState({ searchTerm: term });
-      }, typingTimeout),
-    });
-  };
-
-  render() {
-    const data = this.props.data;
-    const unchoose = this.props.unchoose;
-    const choose = this.props.choose;
-    const chosen = this.props.chosen;
-    function fieldContent(spans) {
-      return spans.map((item, index) => {
-        return (
-          <a
-            key={"https://aps.ntut.edu.tw/course/tw/" + item.href}
-            href={"https://aps.ntut.edu.tw/course/tw/" + item.href}
-            target="_blank"
-          >
-            {item.text}
-          </a>
-        );
-      });
-    }
-    function rowContent(item) {
+    function rowContent(item,chosen,choose,unchoose) {
       let initial;
       if (chosen.includes(item)) {
         initial = [
@@ -138,52 +50,110 @@ class LessonTable extends React.Component {
         return array;
       }, initial);
     }
-    let count = 0;
-    let pageNum = this.state.pageNum;
+
+    function fieldContent(spans) {
+      return spans.map((item, index) => {
+        return (
+          <a
+            key={"https://aps.ntut.edu.tw/course/tw/" + item.href}
+            href={"https://aps.ntut.edu.tw/course/tw/" + item.href}
+            target="_blank"
+          >
+            {item.text}
+          </a>
+        );
+      });
+    }
+
+
+function LessonTable ({require,data,unchoose,choose,chosen}) {
+  const [numPerPage, setNumPerPage] = useState(25);
+    const [pageNum, setPageNum] = useState(1);
+    const [length, setLength] = useState(1);
+        const [searchTerm, setSearchTerm] = useState("");
+        const [typingTimeout, setTypingTimeout] = useState(0);
+    let count=0;
+    let resultCount=0;
+    let content=data.reduce((acc,item, index) => {
+      if (item["課"].length == 0) {
+        return acc;
+      }
+      for (let i in item["課"]) {
+        if (require[item["課"][i]] != 0) {
+          return acc;
+        }
+      }
+      if (searchTerm !== "") {
+        if (
+          !item["課號"].includes(searchTerm) &&
+          !search(item["課程名稱"], searchTerm) &&
+          !search(item["班級"], searchTerm) &&
+          !search(item["教師"], searchTerm)
+        )
+          return acc;
+      }
+      resultCount++;
+      if (resultCount > numPerPage * pageNum) return acc;
+      if (resultCount < numPerPage * (pageNum - 1)) return acc;
+      return [...acc,<tr key={item["_id"]}>{rowContent(item,chosen,choose,unchoose)}</tr>];
+    },[])
+    if(length!=resultCount)setLength(resultCount);
+
+   function  assertSetPageNum(num) {
+    let maxNum = length / numPerPage;
+    if (num >= 1 && num < maxNum + 1) setPageNum(num);
+  }
+
+  function setSearchTermTimer(term) {//todo
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+    setTypingTimeout(setTimeout(function () {
+        setSearchTerm(term );
+        setPageNum(1);
+                setSearchTerm(term );
+      }, 1),
+    );
+  };
 
     let tablehead = [];
     if (typeof data[0] === "object") {
       tablehead = Object.entries(data[0]).reduce(
         (acc, text, index) => {
-          if (index !== 0) return [...acc, <th key={text[0]}>{text[0]}</th>];
+          if (index !== 0&&index !== 26) return [...acc, <th key={text[0]}>{text[0]}</th>];
           return acc;
         },
         [<th key={"blank"}></th>]
       );
     }
-    console.log(content)
-    let Lcontent=content.map((item)=>{console.log(item)
-    return <tr key={item["_id"]}>{rowContent(item)}</tr>
-
-    })
 
     return (
       <div>
         <h2>可選課程 {length}</h2>
         <h4>
-          每頁顯示 {this.state.NumPerPage} 筆 <br /> 目前頁數:{" "}
-          {this.state.pageNum}
+          每頁顯示 {numPerPage} 筆 <br /> 目前頁數:{" "}
+          {pageNum}
         </h4>
         <span>搜尋 </span>
         <input
           type="search"
-          onChange={(e) => this.setSearchTerm(e.target.value)}
+          onChange={(e) => {setSearchTermTimer(e.target.value)}}
           style={{display:'block'}}
         ></input>
         <div style={{display:'flex'}}>
 
                 <div style={{textAlign:'center',display:'flex',justifyContent:'flex-start',width:100+'%'}}>
                                         <h2 style={{width:'130px'}}>每頁顯示:</h2>
-        <button className={styles.pageButton} style={{width:75+'px',fontSize:20+'px'}} onClick={() => this.setNumPerPage(25)}>25</button>
-        <button className={styles.pageButton} style={{width:75+'px',fontSize:20+'px'}} onClick={() => this.setNumPerPage(50)}>50</button>
+        <button className={styles.pageButton} style={{width:75+'px',fontSize:20+'px'}} onClick={() =>  setNumPerPage(25)}>25</button>
+        <button className={styles.pageButton} style={{width:75+'px',fontSize:20+'px'}} onClick={() =>  setNumPerPage(50)}>50</button>
                 </div>
         <div style={{textAlign:'center',display:'flex',justifyContent:'flex-end',width:1000+'px',height:80+'px'}}>
 
-        <button className={styles.pageButton}  onClick={() => this.setPageNum(this.state.pageNum - 1)}>
+        <button className={styles.pageButton}  onClick={() => assertSetPageNum(pageNum - 1)}>
           <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowLeftLong} /> <span className={styles.pageButtonText}>previous page</span>
         </button>
-                <h2 style={{marginLeft:'10px',width:175+'px'}}>目前頁數: {this.state.pageNum} </h2>
-        <button   className={styles.pageButton} onClick={() => this.setPageNum(this.state.pageNum + 1)}>
+                <h2 style={{marginLeft:'10px',width:175+'px'}}>目前頁數: {pageNum} </h2>
+        <button   className={styles.pageButton} onClick={() => assertSetPageNum(pageNum + 1)}>
                    <span className={styles.pageButtonText}>next page</span>  <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowRightLong} />
         </button>
         </div>
@@ -191,21 +161,20 @@ class LessonTable extends React.Component {
         <table style={{ minWidth: 960 + "px" }} className="lessonTable">
           <tbody>
             <tr key={"heading"}>{tablehead}</tr>
-            {Lcontent}
+            {content}
           </tbody>
         </table>
-        <h2>目前頁數: {this.state.pageNum} </h2>
+        <h2>目前頁數: {pageNum} </h2>
         <div style={{textAlign:'center'}}>
-        <button className={styles.pageButton}  onClick={() => this.setPageNum(this.state.pageNum - 1)}>
+        <button className={styles.pageButton}  onClick={() => assertSetPageNum(pageNum - 1)}>
           <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowLeftLong} /> <span className={styles.pageButtonText}>previous page</span>
         </button>
-        <button  className={styles.pageButton} onClick={() => this.setPageNum(this.state.pageNum + 1)}>
+        <button  className={styles.pageButton} onClick={() => assertSetPageNum(pageNum + 1)}>
                    <span className={styles.pageButtonText}>next page</span>  <FontAwesomeIcon className={styles.pageButtonIcon} icon={faArrowRightLong} />
         </button>
         </div>
       </div>
     );
   }
-}
 
 export default LessonTable;
