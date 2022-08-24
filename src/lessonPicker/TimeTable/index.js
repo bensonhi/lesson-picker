@@ -27,7 +27,7 @@ class TimeTable extends React.Component {
     ];
     let changeRequire = this.props.changeRequire;
     let require = this.props.require;
-    let result = [<th key={lessonNum[i]}>{lessonNum[i]}</th>];
+    let result = [<th style={{width:'100px'}} key={lessonNum[i]}>{lessonNum[i]}</th>];
     for (let j = 0; j < 7; j++) {
       if (require[i + 14 * j] == 0)
         result.push(
@@ -84,7 +84,7 @@ class TimeTable extends React.Component {
     });
 
     return (
-      <div style={{ textAlign: "center",marginRight:50+'px'}}>
+      <div style={{ textAlign: "center",marginRight:5+'px'}}>
         <h2 style={{ display: "inline-block"}} > 目前課表</h2>
         <label htmlFor="file-upload" className={styles.customFileUpload}>
             上傳課表

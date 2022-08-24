@@ -15,7 +15,9 @@
     border-radius: 25px;
     border: 2px solid #F19681;
 }
-
+.submitButton:hover{
+  border-color:#ccae9b;
+}
 .fileUpload {
     display: none;
 }

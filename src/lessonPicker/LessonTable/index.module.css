@@ -7,12 +7,19 @@
          border-radius: 25px;
          border: 2px solid;
 }
+.pageButton:hover {
+  background-color:#ccae9b;
+}
+.pageButton:hover .pageButtonIcon {
+  background-color:#ccae9b;
+}
 
 .pageButtonIcon{
     font-size:30px;
     color:black;
     background-color:#E3BFA6;
       vertical-align: middle;
+       transition: background-color 0.4s;
 }
 
 .pageButtonText{
