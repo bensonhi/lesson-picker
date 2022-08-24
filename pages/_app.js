@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return <div>
     <Head>
       <meta charset="utf-8" />
-      <link rel="icon" href="../public/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       <meta name="google-site-verification" content="nDiVKSMJ4-eQU0pmLEjCI0VsMpd2H0w6KpATRQMP_-U" />
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
       <script src="https://kit.fontawesome.com/b8e8e83d36.js" crossOrigin="anonymous"></script>
