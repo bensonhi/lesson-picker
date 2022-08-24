@@ -157,7 +157,7 @@ class SubmitForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{minWidth:960+'px'}}>
         <div className="flex1">
           <h1 className={styles.security_header}>北科大選課規劃工具 Lesson Picker for NTUT</h1>
         </div>

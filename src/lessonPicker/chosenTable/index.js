@@ -76,7 +76,7 @@ class LessonTable extends React.Component {
       tablehead = Object.entries(chosen[0]).reduce(
         (acc, text, index) => {
           if (index !== 0 && shownColumn.includes(index))
-            return [...acc, <th key={text[0]}>{text[0]}</th>];
+            return [...acc, <th style={{minWidth:100+'px'}} key={text[0]}>{text[0]}</th>];
           return acc;
         },
         [<th key={"blank"}></th>]
@@ -90,9 +90,9 @@ class LessonTable extends React.Component {
     const blob = new Blob(formattedChosen);
     const fileDownloadUrl = URL.createObjectURL(blob);
     return (
-      <div>
+      <div style={{minWidth:960+'px'}}>
         <h2>已選課程</h2>
-        <table>
+        <table >
           <tbody>
             <tr key={"heading"}>{tablehead}</tr>
             {content}

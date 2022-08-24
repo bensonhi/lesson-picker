@@ -94,7 +94,7 @@ class TimeTable extends React.Component {
           name="file"
           onChange={(e) => this.props.uploadFile(e)}
         />
-        <table style={{ tablelayout: "fixed", width: 800 + "px" }}>
+        <table style={{ tablelayout: "fixed", minWidth: 960 + "px" }}>
           <tbody>
             <tr>{tablehead}</tr>
             {this.getContent()}

@@ -164,10 +164,10 @@ class LessonTable extends React.Component {
     return (
       <div>
         <h2>可選課程 {length}</h2>
-        <h5>
+        <h4>
           每頁顯示 {this.state.NumPerPage} 筆 <br /> 目前頁數:{" "}
           {this.state.pageNum}
-        </h5>
+        </h4>
         <span>搜尋 </span>
         <input
           type="search"
@@ -192,7 +192,7 @@ class LessonTable extends React.Component {
         </button>
         </div>
         </div>
-        <table className="lessonTable">
+        <table style={{ minWidth: 960 + "px" }} className="lessonTable">
           <tbody>
             <tr key={"heading"}>{tablehead}</tr>
             {content}
