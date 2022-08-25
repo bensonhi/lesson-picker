@@ -46,11 +46,17 @@ button{
   height: 100%;
   width: 100%;
   background-color:#E3BFA6;
- transition: background-color 0.4s;
+ transition: all 0.4s;
 }
 button:hover {
   background-color:#ccae9b;
 }
+
+button:active {
+  background: #ccae9b;
+  transform: translateY(10px);
+}
+
 
 .flex1{
   display: flex;
