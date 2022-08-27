@@ -98,6 +98,7 @@ function LessonTable ({require,data,unchoose,choose,chosen}) {
       return [...acc,<tr key={item["_id"]}>{rowContent(item,chosen,choose,unchoose)}</tr>];
     },[])
     if(length!=resultCount)setLength(resultCount);
+    if(content.length==0& pageNum!=1) setPageNum(1);
 
    function  assertSetPageNum(num) {
     let maxNum = length / numPerPage;
