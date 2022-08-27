@@ -8,6 +8,9 @@ class LessonTable extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentWillUnmount(){
+      cookies.set("Chosen", [], { path: "/", expires: new Date(2025, 11, 17) });
+  }
   render() {
     const unchoose = this.props.unchoose;
     const choose = this.props.choose;
