@@ -10,7 +10,7 @@ function search(item, term) {
   return false;
 }
 
-    function rowContent(item,chosen,choose,unchoose) {
+    function rowContent(item,chosen,choose,unchoose,disableChoose) {
       let initial;
       if (chosen.includes(item)) {
         initial = [
@@ -24,7 +24,17 @@ function search(item, term) {
             </button>
           </td>,
         ];
-      } else {
+      }
+       else if (disableChoose==true){
+                    initial = [
+                      <td key={"uselesschoose"}>
+                        <button
+                        >
+                          衝堂
+                        </button>
+                      </td>,
+                    ];
+       }else {
         initial = [
           <td key={"unchoose"}>
             <button
@@ -69,6 +79,7 @@ function search(item, term) {
 function LessonTable ({require,data,unchoose,choose,chosen}) {
   const [numPerPage, setNumPerPage] = useState(25);
     const [pageNum, setPageNum] = useState(1);
+    const [filterCollision, setFilterCollision] = useState(true);
     const [length, setLength] = useState(1);
         const [searchTerm, setSearchTerm] = useState("");
         const [typingTimeout, setTypingTimeout] = useState(0);
@@ -78,11 +89,16 @@ function LessonTable ({require,data,unchoose,choose,chosen}) {
       if (item["課"].length == 0) {
         return acc;
       }
-      for (let i in item["課"]) {
-        if (require[item["課"][i]] != 0) {
-          return acc;
-        }
-      }
+      let disableChoose=false;
+
+          for (let i in item["課"]) {
+            if (require[item["課"][i]] != 0) {
+                    if(filterCollision){
+                    return acc;
+                    }
+                    else disableChoose=true;
+                    }
+            }
       if (searchTerm !== "") {
         if (
           !item["課號"].includes(searchTerm) &&
@@ -95,7 +111,7 @@ function LessonTable ({require,data,unchoose,choose,chosen}) {
       resultCount++;
       if (resultCount > numPerPage * pageNum) return acc;
       if (resultCount < numPerPage * (pageNum - 1)) return acc;
-      return [...acc,<tr key={item["_id"]}>{rowContent(item,chosen,choose,unchoose)}</tr>];
+      return [...acc,<tr key={item["_id"]}>{rowContent(item,chosen,choose,unchoose,disableChoose)}</tr>];
     },[])
     if(length!=resultCount)setLength(resultCount);
     if(content.length==0& pageNum!=1) setPageNum(1);
@@ -135,6 +151,13 @@ function LessonTable ({require,data,unchoose,choose,chosen}) {
           每頁顯示 {numPerPage} 筆 <br /> 目前頁數:{" "}
           {pageNum}
         </h4>
+        <span>過濾衝堂課程 </span>
+        <input
+          type="checkbox"
+          onChange={(e) => {setFilterCollision(!filterCollision)}}
+          style={{display:'block'}}
+          checked={filterCollision}
+        ></input>
         <span>搜尋 </span>
         <input
           type="search"

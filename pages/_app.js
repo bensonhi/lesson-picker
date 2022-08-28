@@ -8,7 +8,7 @@ config.autoAddCss = false; /* eslint-disable import/first */
 function MyApp({ Component, pageProps }) {
   return <div>
     <Head>
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <link rel="icon" href="/favicon.ico" />
       <meta name="google-site-verification" content="nDiVKSMJ4-eQU0pmLEjCI0VsMpd2H0w6KpATRQMP_-U" />
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />

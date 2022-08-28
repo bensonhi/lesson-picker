@@ -27,7 +27,7 @@ class TimeTable extends React.Component {
     ];
     let changeRequire = this.props.changeRequire;
     let require = this.props.require;
-    let result = [<th style={{width:'100px'}} key={lessonNum[i]}>{lessonNum[i]}</th>];
+    let result = [<th style={{width:'100px',fontSize:25+'px'}} key={lessonNum[i]}>{lessonNum[i]}</th>];
     for (let j = 0; j < 7; j++) {
       if (require[i + 14 * j] == 0)
         result.push(
@@ -42,7 +42,7 @@ class TimeTable extends React.Component {
       else if (require[i + 14 * j] == 1)
         result.push(
           <td key={i + 14 * j}>
-            <button
+            <button style={{fontSize:20+'px'}}
               onClick={() => {
                 changeRequire(i + 14 * j);
               }}
@@ -54,7 +54,7 @@ class TimeTable extends React.Component {
       else
         result.push(
           <td key={i + 14 * j}>
-            <button
+            <button style={{fontSize:25+'px'}}
               onClick={() => {
                 changeRequire(i + 14 * j);
               }}
@@ -70,7 +70,7 @@ class TimeTable extends React.Component {
   getContent() {
     let content = [];
     for (let i = 0; i < 14; i++) {
-      content.push(<tr key={i}>{this.getRow(i)}</tr>);
+      content.push(<tr style={{fontSize:25+'px'}} key={i}>{this.getRow(i)}</tr>);
     }
     return content;
   }
@@ -80,7 +80,7 @@ class TimeTable extends React.Component {
 
     let tablehead = [];
     days.forEach((item, index) => {
-      tablehead.push(<th key={item}>{item}</th>);
+      tablehead.push(<th style={{width:'100px',fontSize:25+'px'}}  key={item}>{item}</th>);
     });
 
     return (
