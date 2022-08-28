@@ -71,7 +71,11 @@ class LessonTable extends React.Component {
         return array;
       }, initial);
     }
+    let hourCount=0;
+    let pointCount=0;
     let content = chosen.map((item, index) => {
+      hourCount+=parseInt(item['時數']);
+      pointCount+=parseInt(item['學分']);
       return <tr key={item["_id"]}>{rowContent(item)}</tr>;
     });
     let tablehead = [];
@@ -93,7 +97,7 @@ class LessonTable extends React.Component {
     const blob = new Blob(formattedChosen);
     const fileDownloadUrl = URL.createObjectURL(blob);
     return (
-      <div style={{minWidth:960+'px'}}>
+      <div style={{minWidth:960+'px',textAlign:'center'}}>
         <h2>已選課程</h2>
         <table >
           <tbody>
@@ -102,6 +106,7 @@ class LessonTable extends React.Component {
           </tbody>
         </table>
         <div >
+        <h2 style={{display:'inline'}}>總學分:{pointCount}  &nbsp;</h2> <h2 style={{display:'inline'}}> 總時數:{hourCount}</h2>
         <a style={{textDecoration:'none'}} download="已選課表" href={fileDownloadUrl}>
           <button className={styles.downloader}>輸出課表</button>
         </a>

@@ -100,13 +100,17 @@ function LessonTable ({require,data,unchoose,choose,chosen}) {
                     }
             }
       if (searchTerm !== "") {
+        let searchTermArray=searchTerm.split ('&&');
+        for(let i=0;i<searchTermArray.length;i++){
         if (
-          !item["課號"].includes(searchTerm) &&
-          !search(item["課程名稱"], searchTerm) &&
-          !search(item["班級"], searchTerm) &&
-          !search(item["教師"], searchTerm)
+          !item["課號"].includes(searchTermArray[i]) &&
+          !item["修"].includes(searchTermArray[i]) &&
+          !search(item["課程名稱"], searchTermArray[i]) &&
+          !search(item["班級"], searchTermArray[i]) &&
+          !search(item["教師"], searchTermArray[i])
         )
           return acc;
+          }
       }
       resultCount++;
       if (resultCount > numPerPage * pageNum) return acc;
