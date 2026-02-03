@@ -2,6 +2,8 @@
 
 A full-stack web application designed to solve the course scheduling problem for university students at National Taipei University of Technology (NTUT). This system processes thousands of course offerings and provides real-time conflict detection, visual schedule planning, and data persistence to help students optimize their academic planning.
 
+![Lesson Picker Screenshot](public/screenshot.png)
+
 ## Overview
 
 Course registration is a complex optimization problem faced by university students each semester. This application addresses this challenge by:
