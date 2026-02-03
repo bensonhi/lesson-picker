@@ -13,6 +13,10 @@ Course registration is a complex optimization problem faced by university studen
 
 Built from scratch as a personal project to help fellow students navigate the complex course registration process.
 
+## Screenshot
+
+![NTUT Course Selection Optimizer](screenshot.png)
+
 ## Technical Highlights
 
 ### Algorithm Design
